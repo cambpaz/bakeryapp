@@ -1,0 +1,63 @@
+@import "estandar";
+
+.container-foto {
+    background-image: linear-gradient(rgba(243, 211, 169, 0.614),rgba(214, 196, 172, 0.514)), url(../assets/img/portada-nosotros1.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+.container-nosotros {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+.container-nosotros h3 {
+    font-size: $fuentetitulo;
+}
+.nosotros-flex {
+    display: flex;
+    flex-direction: row;
+}
+.nosotros-text p{
+    font-size: $fuentetexto-lg;
+    padding: 3em;
+}
+.imagen-panadero img{
+    margin: 2.5rem;
+}
+.textAlign {
+    text-align: center;
+}
+.texto-quienessomos {
+    position: relative;
+    display: inline-block;
+    font-size: $fuentetexto-lg;
+    
+    &::before,
+    &::after {
+        content: '';
+        display: inline-block;
+        margin: 25px;
+        position: absolute;
+        background: black;
+    }
+    &::before {
+        background: white;
+        width: 100%;
+        z-index: -1;        
+        height: 100%;
+    }
+    &::after {
+        height: 5%;
+        width: 90vw;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        top: 0;
+        z-index: -2;
+    }
+}
+
+
+

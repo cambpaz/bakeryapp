@@ -1,0 +1,104 @@
+@import "estandar";
+html {
+    font-size: 16px;
+}
+.container-imagen {
+    background-image: linear-gradient(rgba(243, 211, 169, 0.614),rgba(214, 196, 172, 0.514)), url(../assets/img/fondo-desayuno.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+.container-portada {
+    height: 90vh;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    text-align: center;
+}
+.container-portada h2 {
+    width: 120em;
+    max-width: 95%;
+    font-size: $fuentetitulo;
+    padding: $paddingmd;
+}
+.container-portada h3 {
+    max-width: 95%;
+    font-size: $fuentesubtitulo;
+}
+.flecha {
+    font-size: 4rem;
+    color: black;
+    padding: $paddinglg;
+}
+.flecha:hover {
+    color: black;
+}
+.container-paso1 h4 {
+    text-align: center;
+    font-size: $fuentetexto-lg;
+    padding: $paddinglg;
+}
+.container-paso1 p {
+    text-align: center;
+    font-size: 30px;
+    padding: $paddingxs $paddingmd;
+}
+.card-paso1 {
+    margin: 30px;
+    height: 33rem;
+}  
+.card-paso1:hover {
+    transform: scale(1.05);
+    transition: 1s;
+} 
+.card-texto {
+    font-size: 15px!important;
+}
+.container-bebidas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+.estilo-boton {
+    margin-top: .75rem;
+    font-size: $fuentetexto-md;
+    background-color: $colorClarito;
+    color: $colorTexto;
+    text-transform: uppercase;
+}
+.estilo-boton:hover {
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+    transition: 0.5s;
+}
+.container-comida {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.recomendaciones {
+    padding: 20px;
+    text-align: center;
+}
+.btn-rec {font-size: 30px;}
+@media only screen and (max-width: 1400px) {
+    html {
+        font-size: 11px;
+    }
+    .container-bebidas {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .container-comida {
+        flex-wrap: wrap;
+    }
+    .card-paso1 {
+        width: 25rem;
+        height: 45rem;
+    }
+    .card-title {
+        font-size: $fuentetexto-lg;
+        padding: $paddingmd;
+    }
+}

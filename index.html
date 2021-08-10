@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu panaderia en casa</title>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/b29381595a.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="scss/estilos.css">
+</head>
+<body>
+	<div class="container-imagen">
+		<div class="container-fluid container-header">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<header>
+						<div>
+							<h1 class="nombre">YOUR BAKERY</h1>
+						</div>
+						<nav>
+							<ul class="nav-bar">
+								<li class="nav-item">
+									<a href="" class="nav-link">HOME</a>
+								</li>
+								<li class="nav-item">
+									<a href="" class="nav-link active">ARMA TU DESAYUNO</a>
+								</li>
+								<!-- <li class="nav-item">
+									<a href="pages/nosotros.html" class="nav-link">QUIENES SOMOS</a>
+								</li>
+								<li class="nav-item">
+									<a href="" class="nav-link">CONTACTO</a>
+								</li> -->
+								<!-- <li>
+									<a href="" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+								</li> -->
+							</ul>
+						</nav>
+					</header>
+				</div>
+			</div>
+		</div>
+		<main>
+			<div class="container-portada">
+				<h2>¿Se te Antoja un rico desayuno?</h2>
+				<h3>¡Hace tu pedido online y recibilo en la puerta de tu casa!</h3>
+				<a href="#paso1"><i class="flecha fas fa-arrow-down"></i></i></a>
+			</div>
+		</main>   
+	</div>
+        <!-- hasta aca va una background image y una felchita para abajo que lleve al usuario al paso 1-->
+        <div class="container-paso1">
+            <h4 id="paso1">PASO 1</h4>
+			<div ></div>
+            <p>Elegí tu bebida</p>
+			<div class="container-bebidas">
+				<div data-aos="flip-left" class="card card-paso1">
+					<img src="assets/img/cafenegro.jpeg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">CAFE NEGRO</h5>
+						<p class="precioBebida">$100</p>
+						<button class="btn estilo-boton" onclick="elegirBebida('cafe Negro', 100)">SELECCIONAR</button> <br>
+						<!-- <button class="btn estilo-boton" onclick="calcularCuotas()">Pagar en cuotas</button>
+						<button class="btn estilo-boton" onclick="cafeNegro.cantCalorias()">Cantidad de Calorías</button> -->
+					</div>
+					<!-- <div class="modal" id="modal">
+						<div class="modal-header">
+							<div class="tituloModal"> BACKGROUND-IMAGE = IMAGEN PRODUCTO-->
+								<!-- <p>CAFE NEGRO</p>
+							</div>
+							<button id="closeModal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>Por favor, seleccione una cantidad</p>
+							<input type="number"><button><i class="fas fa-cart-plus"></i></button>
+						</div>
+					</div> --> 
+				</div>
+				<div data-aos="flip-left" class="card card-paso1">
+					<img src="assets/img/capuchino.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">CAPUCHINO</h5>
+						<p class="precioBebida">$110</p>
+						<button class="btn estilo-boton" onclick="elegirBebida('capuchino', 110)">Seleccionar</button> <br>
+						<!-- <button class="btn estilo-boton" onclick="calcularCuotas()">Pagar en cuotas</button><br>
+						<button class="btn estilo-boton" onclick="capuchino.cantCalorias()">Cantidad de Calorías</button> -->
+					</div>
+				</div>
+				<div data-aos="flip-left" class="card card-paso1">
+					<img src="assets/img/jugodenaranja.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">JUGO DE NARANJA</h5>
+						<p class="precioBebida">$70</p>
+						<button class="btn estilo-boton" onclick="elegirBebida('jugo de naranja', 70)">Seleccionar</button> <br>
+						<!-- <button class="btn estilo-boton" onclick="calcularCuotas()">Pagar en cuotas</button> <br>
+						<button class="btn estilo-boton" onclick="jugoDeNaranja.cantCalorias()">Cantidad de Calorías</button> -->
+					</div>
+				</div>
+				<div data-aos="flip-left" class="card card-paso1">
+					<img src="assets/img/tenegro.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">TE NEGRO</h5>
+						<p class="precioBebida">$70</p>
+						<button class="btn estilo-boton" onclick="elegirBebida('té negro', 70)">Seleccionar</button> <br>
+						<!-- <button class="btn estilo-boton" onclick="calcularCuotas()">Pagar en cuotas</button><br>
+						<button class="btn estilo-boton" onclick="te.cantCalorias()">Cantidad de Calorías</button> -->
+					</div>
+				</div>
+				<div data-aos="flip-left" class="card card-paso1">
+					<img src="assets/img/cafecortado.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">CAFE CORTADO</h5>
+						<p class="precioBebida">$100</p>
+						<button class="btn estilo-boton" onclick="elegirBebida('café cortado', 100)">Seleccionar</button> <br>
+						<!-- <button class="btn estilo-boton" onclick="calcularCuotas()">Pagar en cuotas</button> <br>
+						<button class="btn estilo-boton" onclick="cafeCortado.cantCalorias()">Cantidad de Calorías</button> -->
+					</div>
+				</div>
+			</div>
+			<h4>PASO 2</h4>
+			<p>¡Elegí algo rico para comer!</p>
+			<div class="container-comida">
+				<div class="card card-paso1">
+					<img src="assets/img/medialunas.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">MEDIALUNAS (x2U)</h5>
+						<p class="precioBebida">$120</p>
+						<button class="btn estilo-boton" onclick="elegirComida('medialunas', 120)">SELECCIONAR</button> <br>
+						<!-- <button class="btn estilo-boton" onclick="calcularCuotas()">Pagar en cuotas</button> <br>
+						<button class="btn estilo-boton" onclick="medialunas.cantCalorias()">Cantidad de Calorías</button> -->
+					</div>
+				</div>
+				<div class="card card-paso1">
+					<img src="assets/img/brownie.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">BROWNIE</h5>
+						<p class="precioBebida">$140</p>
+						<button class="btn estilo-boton" onclick="elegirComida('brownie', 140)">SELECCIONAR</button> <br>
+						<!-- <button class="btn estilo-boton" onclick="calcularCuotas()">Pagar en cuotas</button> <br>
+						<button class="btn estilo-boton" onclick="brownie.cantCalorias()">Cantidad de Calorías</button> -->
+					</div>
+				</div>
+				<div class="card card-paso1">
+					<img src="assets/img/lemonie.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">LEMONIE</h5>
+						<p class="precioBebida">$130</p>
+						<button class="btn estilo-boton" onclick="elegirComida('lemonie', 130)">SELECCIONAR</button> <br>
+						<!-- <button class="btn estilo-boton" onclick="calcularCuotas()">Pagar en cuotas</button> <br>
+						<button class="btn estilo-boton" onclick="lemonie.cantCalorias()">Cantidad de Calorías</button> -->
+					</div>
+				</div>
+				<div class="card card-paso1">
+					<img src="assets/img/tostado.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">TOSTADO DE JAMON Y QUESO</h5>
+						<p class="precioBebida">$150</p>
+						<button class="btn estilo-boton" onclick="elegirComida('tostado de jamon y queso', 150)">SELECCIONAR</button> <br>
+						<!-- <button class="btn estilo-boton" onclick="calcularCuotas()">Pagar en cuotas</button> <br>
+						<button class="btn estilo-boton" onclick="tostado.cantCalorias()">Cantidad de Calorías</button> -->
+					</div>
+				</div>
+				<div class="card card-paso1">
+					<img src="assets/img/medialunasjyq.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">MEDIALUNAS CON JAMON Y QUESO (x2U)</h5>
+						<p class="precioBebida">$130</p>
+						<button class="btn estilo-boton" onclick="elegirComida('medialunas de jamon y queso', 130)">SELECCIONAR</button> <br>
+						<!-- <button class="btn estilo-boton" onclick="calcularCuotas()">Pagar en cuotas</button> <br>
+						<button class="btn estilo-boton" onclick="medialunasJYQ.cantCalorias()">Cantidad de Calorías</button> -->
+					</div>
+				</div>
+			</div>
+        </div>
+	<aside class="recomendaciones">
+		<button class="btn estilo-boton btn-rec" onclick="miArray()">RECOMEDACIONES</button>
+		<button class="btn estilo-boton btn-rec" onclick="ordernarProductos()">ORDENAR POR ORDEN ALFABETICO</button>
+	</aside>
+	<script src="js/main.js"></script>	
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>

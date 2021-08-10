@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Karla', sans-serif;
+  scroll-behavior: smooth;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.nombre {
+  font-size: 2rem;
+  padding: 0.5em;
+}
+
+.container-header {
+  background-color: none;
+  height: 10vh;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10vh;
+}
+
+.nav-bar {
+  margin: 0px;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.nav-link {
+  font-size: 1.4rem;
+  padding: 2.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  background: #708A81;
+  display: block;
+  margin: auto;
+  height: 2px;
+  -webkit-transition: .8s;
+  transition: .8s;
+}
+
+nav ul li a::before {
+  content: '';
+  width: 0%;
+  background: #708A81;
+  display: block;
+  margin: auto;
+  height: 2px;
+  -webkit-transition: .8s;
+  transition: .8s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+}
+
+nav ul li a:hover::before {
+  width: 100%;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.nav-link:visited {
+  color: black;
+}
+
+nav ul li .active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+html {
+  font-size: 16px;
+}
+
+.container-imagen {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(243, 211, 169, 0.614)), to(rgba(214, 196, 172, 0.514))), url(../assets/img/fondo-desayuno.jpg);
+  background-image: linear-gradient(rgba(243, 211, 169, 0.614), rgba(214, 196, 172, 0.514)), url(../assets/img/fondo-desayuno.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+.container-portada {
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.container-portada h2 {
+  width: 120em;
+  max-width: 95%;
+  font-size: 5rem;
+  padding: 0.5em;
+}
+
+.container-portada h3 {
+  max-width: 95%;
+  font-size: 3rem;
+}
+
+.flecha {
+  font-size: 4rem;
+  color: black;
+  padding: 1em;
+}
+
+.flecha:hover {
+  color: black;
+}
+
+.container-paso1 h4 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 1em;
+}
+
+.container-paso1 p {
+  text-align: center;
+  font-size: 30px;
+  padding: 0.2em 0.5em;
+}
+
+.card-paso1 {
+  margin: 30px;
+  height: 33rem;
+}
+
+.card-paso1:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.card-texto {
+  font-size: 15px !important;
+}
+
+.container-bebidas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  text-align: center;
+}
+
+.estilo-boton {
+  margin-top: .75rem;
+  font-size: 1.4rem;
+  background-color: #E5D1B8;
+  color: #2B2129;
+  text-transform: uppercase;
+}
+
+.estilo-boton:hover {
+  -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container-comida {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+}
+
+.recomendaciones {
+  padding: 20px;
+  text-align: center;
+}
+
+.btn-rec {
+  font-size: 30px;
+}
+
+@media only screen and (max-width: 1400px) {
+  html {
+    font-size: 11px;
+  }
+  .container-bebidas {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .container-comida {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .card-paso1 {
+    width: 25rem;
+    height: 45rem;
+  }
+  .card-title {
+    font-size: 2.5rem;
+    padding: 0.5em;
+  }
+}
+
+.container-foto {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(243, 211, 169, 0.614)), to(rgba(214, 196, 172, 0.514))), url(../assets/img/portada-nosotros1.jpg);
+  background-image: linear-gradient(rgba(243, 211, 169, 0.614), rgba(214, 196, 172, 0.514)), url(../assets/img/portada-nosotros1.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+.container-nosotros {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 80vh;
+}
+
+.container-nosotros h3 {
+  font-size: 5rem;
+}
+
+.nosotros-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.nosotros-text p {
+  font-size: 2.5rem;
+  padding: 3em;
+}
+
+.imagen-panadero img {
+  margin: 2.5rem;
+}
+
+.textAlign {
+  text-align: center;
+}
+
+.texto-quienessomos {
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+}
+
+.texto-quienessomos::before, .texto-quienessomos::after {
+  content: '';
+  display: inline-block;
+  margin: 25px;
+  position: absolute;
+  background: black;
+}
+
+.texto-quienessomos::before {
+  background: white;
+  width: 100%;
+  z-index: -1;
+  height: 100%;
+}
+
+.texto-quienessomos::after {
+  height: 5%;
+  width: 90vw;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 0;
+  top: 0;
+  z-index: -2;
+}
+/*# sourceMappingURL=estilos.css.map */

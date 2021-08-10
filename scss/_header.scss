@@ -1,0 +1,70 @@
+@import "estandar";
+* {
+    margin:0px;
+    padding: 0px;
+    font-family: 'Karla', sans-serif;
+    scroll-behavior: smooth;
+    font-family: $font-base;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+*,*::before, *::after { box-sizing: border-box;}
+.nombre {
+    font-size: 2rem;
+    padding: $paddingmd;
+}
+.container-header {
+    background-color: none;
+    height: 10vh;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+}
+.nav-bar {
+    margin: 0px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.nav-link {
+    font-size: $fuentetexto-md;
+    padding: $paddingnav;
+    text-decoration: none;
+    color: black;
+}
+nav ul li a::after {
+    content: '';
+    width: 0%;
+    background: $colorBotones;
+    display: block;
+    margin: auto;
+    height: 2px;
+    transition: .8s;
+}
+nav ul li a::before {
+    content: '';
+    width: 0%;
+    background: $colorBotones;
+    display: block;
+    margin: auto;
+    height: 2px;
+    transition: .8s;
+}
+nav ul li a:hover::after {
+    width: 100%;
+    transform-origin: right;
+}
+nav ul li a:hover::before {
+    width: 100%;
+    transform-origin: left;
+}
+.nav-link:visited {
+    color: black;
+}
+nav ul li .active {
+    transform: scale(1.2);
+}
