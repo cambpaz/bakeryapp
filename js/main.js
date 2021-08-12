@@ -43,11 +43,6 @@ function elegirBebida (bebida, precio) {
 		alert("Usted no ha ingresado una cantidad valida.")}
 }
 
-function calcularCuotas () {
-	let cuotas = parseInt(prompt("En cuantas cuotas desea realizar su compra? Solo valores númericos."))
-	alert("Su monto es de " + cuotas + " cuotas de $" + precioTotal / cuotas + ".");
-}
-
 function elegirComida (comida, precio) {
 	alert("Su eleccion para comer fue " + comida + ".");
 	var cantidad = parseInt(prompt("¿Cuantos" + " " + comida + " " + "quieres ordenar? (sólo valores númericos)"))
@@ -81,3 +76,5 @@ function ordernarProductos() {
 	console.log(miArrayDeObjetos);
 	alert("Los productos ordenados alfabeticamente son: "+"\n"+ miArrayDeObjetos.join("\n"));
 }
+
+
