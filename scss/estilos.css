@@ -172,6 +172,7 @@ html {
 .card-paso1 {
   margin: 30px;
   height: 33rem;
+  width: 18rem;
 }
 
 .card-paso1:hover {
@@ -222,6 +223,8 @@ html {
       -ms-flex-direction: row;
           flex-direction: row;
   text-align: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .recomendaciones {
@@ -245,6 +248,9 @@ html {
         flex-wrap: wrap;
   }
   .container-comida {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
