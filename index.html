@@ -44,6 +44,8 @@
 		</div>
 		<main>
 			<div class="container-portada">
+				<p id="saludo"></p>
+				<p id="bienvenida"></p>
 				<h2>¿Se te Antoja un rico desayuno?</h2>
 				<h3>¡Hace tu pedido online y recibilo en la puerta de tu casa!</h3>
 				<a href="#paso1"><i class="flecha fas fa-arrow-down"></i></i></a>
@@ -61,7 +63,7 @@
 					<div class="card-body">
 						<h5 class="card-title">CAFE NEGRO</h5>
 						<p class="precioBebida">$100</p>
-						<button class="btn estilo-boton" onclick="elegirBebida('cafe Negro', 100)">SELECCIONAR</button> <br>
+						<button class="btn estilo-boton" onclick="elegirBebida('cafe negro', 100)">SELECCIONAR</button> <br>
 						<!-- <button class="btn estilo-boton" onclick="calcularCuotas()">Pagar en cuotas</button>
 						<button class="btn estilo-boton" onclick="cafeNegro.cantCalorias()">Cantidad de Calorías</button> -->
 					</div>
@@ -119,10 +121,17 @@
 					</div>
 				</div>
 			</div>
+			<div id="padre">
+				<p>POR AHORA, TU PEDIDO ESTA COMPUESTO POR:</p>
+				<br>
+			</div>
+			<div id="boton" style="text-align: center;">
+				<button class="estilo-boton btn" onclick="manipulandoElDOM()">Apreta este boton para ver nuestra carta completa</button>
+			</div>
 			<h4>PASO 2</h4>
 			<p>¡Elegí algo rico para comer!</p>
 			<div class="container-comida">
-				<div class="card card-paso1">
+				<div data-aos="flip-left" class="card card-paso1">
 					<img src="assets/img/medialunas.jpg" class="card-img-top" alt="...">
 					<div class="card-body">
 						<h5 class="card-title">MEDIALUNAS (x2U)</h5>
@@ -132,7 +141,7 @@
 						<button class="btn estilo-boton" onclick="medialunas.cantCalorias()">Cantidad de Calorías</button> -->
 					</div>
 				</div>
-				<div class="card card-paso1">
+				<div data-aos="flip-left" class="card card-paso1">
 					<img src="assets/img/brownie.jpg" class="card-img-top" alt="...">
 					<div class="card-body">
 						<h5 class="card-title">BROWNIE</h5>
@@ -142,9 +151,9 @@
 						<button class="btn estilo-boton" onclick="brownie.cantCalorias()">Cantidad de Calorías</button> -->
 					</div>
 				</div>
-				<div class="card card-paso1">
+				<div data-aos="flip-left" class="card card-paso1">
 					<img src="assets/img/lemonie.jpg" class="card-img-top" alt="...">
-					<div class="card-body">
+					<div data-aos="flip-left" class="card-body">
 						<h5 class="card-title">LEMONIE</h5>
 						<p class="precioBebida">$130</p>
 						<button class="btn estilo-boton" onclick="elegirComida('lemonie', 130)">SELECCIONAR</button> <br>
@@ -152,7 +161,7 @@
 						<button class="btn estilo-boton" onclick="lemonie.cantCalorias()">Cantidad de Calorías</button> -->
 					</div>
 				</div>
-				<div class="card card-paso1">
+				<div data-aos="flip-left" class="card card-paso1">
 					<img src="assets/img/tostado.jpg" class="card-img-top" alt="...">
 					<div class="card-body">
 						<h5 class="card-title">TOSTADO DE JAMON Y QUESO</h5>
@@ -162,7 +171,7 @@
 						<button class="btn estilo-boton" onclick="tostado.cantCalorias()">Cantidad de Calorías</button> -->
 					</div>
 				</div>
-				<div class="card card-paso1">
+				<div data-aos="flip-left" class="card card-paso1">
 					<img src="assets/img/medialunasjyq.jpg" class="card-img-top" alt="...">
 					<div class="card-body">
 						<h5 class="card-title">MEDIALUNAS CON JAMON Y QUESO (x2U)</h5>

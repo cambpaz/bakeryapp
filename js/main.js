@@ -41,6 +41,11 @@ function elegirBebida (bebida, precio) {
 		alert("Usted ha ordenado " + cantidad + " " + bebida + ". Su total a abonar es $" + precioTotal  + ".");
 	} else { 
 		alert("Usted no ha ingresado una cantidad valida.")}
+	let padre = document.getElementById("padre");
+	console.log(padre);
+	let parrafo = document.createElement("p");
+	parrafo.innerHTML = "- " + cantidad + " " + bebida + ". TOTAL: $" + precioTotal;
+	padre.appendChild(parrafo);
 }
 
 function elegirComida (comida, precio) {
@@ -76,5 +81,16 @@ function ordernarProductos() {
 	console.log(miArrayDeObjetos);
 	alert("Los productos ordenados alfabeticamente son: "+"\n"+ miArrayDeObjetos.join("\n"));
 }
+let miArraydeBebidas = [];
+miArraydeBebidas.push(cafeNegro, capuchino, te, jugoDeNaranja, cafeCortado);
 
-
+function manipulandoElDOM () {
+	for (bebida of miArraydeBebidas) {
+	let boton = document.getElementById("boton")
+	let carta = document.createElement("p")
+	carta.innerHTML = `<h3>Nombre: ${bebida.nombre}</h3>
+						<p>Precio: ${bebida.precio}</p>
+						<p>Cant. de calorias: ${bebida.calorias}</p>`
+	boton.appendChild(carta)
+	}
+}
