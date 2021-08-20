@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0px;
   padding: 0px;
@@ -56,7 +57,8 @@ header {
 }
 
 .nav-link {
-  font-size: 1.4rem;
+  font-weight: 300;
+  font-size: 1.7rem;
   padding: 2.5rem;
   text-decoration: none;
   color: black;
@@ -157,13 +159,13 @@ html {
   color: black;
 }
 
-.container-paso1 h4 {
+.container-pasos h4 {
   text-align: center;
   font-size: 2.5rem;
   padding: 1em;
 }
 
-.container-paso1 p {
+.container-pasos p {
   text-align: center;
   font-size: 30px;
   padding: 0.2em 0.5em;
@@ -173,6 +175,10 @@ html {
   margin: 30px;
   height: 33rem;
   width: 18rem;
+}
+
+.card-title {
+  text-transform: uppercase;
 }
 
 .card-paso1:hover {
@@ -214,7 +220,7 @@ html {
   transition: 0.5s;
 }
 
-.container-comida {
+.container-comidas {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -230,6 +236,28 @@ html {
 .recomendaciones {
   padding: 20px;
   text-align: center;
+}
+
+.modal-dialog {
+  margin-left: 30%;
+}
+
+.modal-content {
+  width: 43.75rem;
+}
+
+.modal-header {
+  height: 25rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(241, 234, 224, 0.614)), to(rgba(241, 234, 224, 0.614))), url(../assets/img/1.jpg);
+  background-image: linear-gradient(rgba(241, 234, 224, 0.614), rgba(241, 234, 224, 0.614)), url(../assets/img/1.jpg);
+  background-size: contain;
+}
+
+.modal-title {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin: 25%;
+  font-size: 3rem;
 }
 
 .btn-rec {
@@ -344,50 +372,77 @@ html {
   z-index: -2;
 }
 
-.slider {
+#logo {
+  width: 22rem;
+  margin-top: 2.5rem;
+}
+
+.landing {
+  min-height: 100vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(243, 211, 169, 0.614)), to(rgba(214, 196, 172, 0.514))), url(../assets/img/portada-nosotros1.jpg);
+  background-image: linear-gradient(rgba(243, 211, 169, 0.614), rgba(214, 196, 172, 0.514)), url(../assets/img/portada-nosotros1.jpg);
+  background-size: cover;
+  padding: 0rem 5rem;
+}
+
+.big-text {
   position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -5%);
+          transform: translate(-50%, -5%);
+  font-size: 5rem;
+  color: white;
+}
+
+.intro {
+  background: #E5D1B8;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  background: -webkit-gradient(linear, right top, left top, from(#ba7453), to(#d1a984));
-  background: linear-gradient(to left, #ba7453, #d1a984);
-  z-index: -1;
-}
-
-section {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 90vh;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.hero {
-  height: 80%;
-  width: 90%;
+.text {
+  font-family: 'Lobster', cursive;
+  color: #708A81;
+  font-size: 5rem;
 }
 
-.hero img {
-  margin-top: 60px;
+.hide {
+  background: #E5D1B8;
+  overflow: hidden;
+}
+
+.hide span {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  display: inline-block;
+}
+
+.slider {
+  background: #a3c1cb;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
 }
 
-.headline {
-  position: absolute;
-  top: 40%;
-  left: 30%;
-  font-size: 4rem;
-  -webkit-transform: translate(-20%, -70%);
-          transform: translate(-20%, -70%);
-  color: white;
-  z-index: 2;
+.texto-principal {
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 400;
 }
 /*# sourceMappingURL=estilos.css.map */
