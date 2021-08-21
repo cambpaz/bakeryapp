@@ -64,6 +64,10 @@ header {
   color: black;
 }
 
+.nav.link:hover {
+  color: black;
+}
+
 nav ul li a::after {
   content: '';
   width: 0%;
