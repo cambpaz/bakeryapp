@@ -22,10 +22,12 @@ console.log(bebidas);
 //molde comidas
 function Comida(id, nombre, precio, calorias, img) {
 this.id = parseInt(id);
+this.modalId = "modal" + this.id;
 this.nombre = nombre;
 this.precio = parseFloat(precio);
 this.calorias = calorias;
 this.img = img;
+this.cantidad = 0;
 this.cantCalorias = function () {alert("Esta comida tiene un total de " + this.calorias + " calorías.")}
 }
 //creo las comidas
@@ -55,63 +57,35 @@ for (const bebida of bebidas) {
 let containerModal = document.getElementById("container-modal")
 //CREO LOS MODAL UNO POR UNO
 for (const bebida of bebidas) {
-  let divPopUp = document.createElement("div");
-  divPopUp.innerHTML = 
-  `<div class="modal fade" id="${bebida.modalId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content modal-lg">
-        <div style="background-image: linear-gradient(rgba(241, 234, 224, 0.614),rgba(241, 234, 224, 0.614)), url(../assets/img/${bebida.id}.jpg);" class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">${bebida.nombre}</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-				<form action="">
-					<p>Elija la cantidad de unidades que quiere ordenar</p>
-			  		<input type="number" class="btnCantidad" id="cantidad${bebida.id}">
-				</form>
+	let divPopUp = document.createElement("div");
+	divPopUp.innerHTML = 
+		`<div class="modal fade" id="${bebida.modalId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content modal-lg">
+					<div style="background-image: linear-gradient(rgba(241, 234, 224, 0.614),rgba(241, 234, 224, 0.614)), url(../assets/img/${bebida.id}.jpg);" class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">${bebida.nombre}</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form action="">
+							<p>Elija la cantidad de unidades que quiere ordenar</p>
+							<input type="number" class="btnCantidad" id="cantidad${bebida.id}">
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button value="submit" type="button" data-dismiss="modal" id="agregarCarrito${bebida.id}" class="btn btn-primary btnCarrito">Agregar al carrito</button>
+					</div>
+				</div>
 			</div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button value="submit" type="button" data-dismiss="modal" id="agregarCarrito${bebida.id}" class="btn btn-primary btnCarrito">Agregar al carrito</button>
-        </div>
-      </div>
-    </div>
-  </div>` 
-  containerModal.appendChild(divPopUp);
-}
-// creO un array vacio QUE SERAN LAS BEBIDAS SELECCIONADAS
-let carrito = [];
-
-//creo la funcion que luego utilizare en el evento
-function seleccionar() {
-  //busco el ID del producto
-  let bebida = bebidas.find(bebida => bebida.id == this.id);    
-  carrito.push(bebida);
-}
-//creo una variable con el boton para que se acceda al pop up correspondiente
-let btnSeleccionarBebida = document.getElementsByClassName("btnSeleccionarBebida");
-//recorro los botones para que el click se asocie a la bebida que esta siendo seleccionada
-for (const boton of btnSeleccionarBebida) {
-  boton.addEventListener("click", seleccionar);
-}
-//HASTA ACA TODO BIEN FUNCIONA TODO DIVINO NO TOCAR NADA!!!!
-
-
-function agregarAlCarrito() {
-    let bebidaSeleccionada = bebidas.find(bebida => bebida.id == this.id);
-    let cantidad = getElementById
-  }
-
-let btnAgregarAlCarrito = document.getElementsByClassName("btnCantidad");
-
-//EVENTO DE AGREGAR AL CARRITO
-for (const boton of btnAgregarAlCarrito) {
-  // btnAgregarAlCarrito.addEventListener("click", agregarAlCarrito);
+	</div>` 
+	containerModal.appendChild(divPopUp);
 }
 
 
+////////////////////////////////////////////////////////////////////////// COMIDAS
 let containerComida = document.getElementById("container-comidas")
 for (const comida of comidas) {
 	let div = document.createElement("div");
@@ -120,74 +94,82 @@ for (const comida of comidas) {
 	<div class="card-body">
 		<h5 class="card-title">${comida.nombre}</h5>
 		<p class="precioBebida">$${comida.precio}</p>
-		<button type="button" id="${comida.id}" class="btn estilo-boton btnSeleccionarBebida" data-toggle="modal" data-target="#exampleModal">SELECCIONAR</button> <br>
+		<button type="button" id="${comida.id}" class="btn estilo-boton btnSeleccionarComida" data-toggle="modal" data-target="#${comida.modalId}">SELECCIONAR</button> <br>
 	</div>
 	</div>`
 	containerComida.appendChild(div)
 }
-//CODIGO COMENTADO DEL PRIMER SIMULADOR (YA NO SERA UTILIZADO)
+let padreModalComida = document.getElementById("container-modal-comidas");
+console.log(padreModalComida);
+for (const comida of comidas) {
+	let divPopUpComida = document.createElement("div");
+	divPopUpComida.innerHTML = 
+	`<div class="modal fade" id="${comida.modalId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content modal-lg">
+				<div style="background-image: linear-gradient(rgba(241, 234, 224, 0.614),rgba(241, 234, 224, 0.614)), url(../assets/img/${comida.id}.jpg);" class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">${comida.nombre}</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="">
+						<p>Elija la cantidad de unidades que quiere ordenar</p>
+						<input type="number" class="btnCantidad" id="cantidad${comida.id}">
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button value="submit" type="button" data-dismiss="modal" id="agregarCarrito${comida.id}" class="btn btn-primary btnCarrito">Agregar al carrito</button>
+				</div>
+			</div>
+		</div>
+	</div>` 
+	padreModalComida.appendChild(divPopUpComida);
+}
 
+//////////////////////////////////////////////////////////////////  EVENTOS
+// creO un array vacio QUE SERAN LAS BEBIDAS SELECCIONADAS
+let carrito = [];
+//creo la funcion que luego utilizare en el evento
+function seleccionarBebida() {
+  //busco el ID del producto
+	let bebida = bebidas.find(bebida => bebida.id == this.id);    
+	carrito.push(bebida);
+}
+//creo una variable con el boton para que se acceda al pop up correspondiente
+let btnSeleccionarBebida = document.getElementsByClassName("btnSeleccionarBebida");
+//recorro los botones para que el click se asocie a la bebida que esta siendo seleccionada
+for (const boton of btnSeleccionarBebida) {
+	boton.addEventListener("click", seleccionarBebida);
+}
 
-// let precioTotal = 0;
-// function elegirBebida (bebida, precio) {
-// 	alert("Elegiste beber " + bebida + ".");
-// 	var cantidad = parseInt((prompt("¿Cuantos" + " " + bebida + " " + "quieres ordenar? (sólo valores númericos)")));
-// 	console.log(typeof(cantidad));
-// 	if (cantidad < 100 && cantidad > 0) {
-// 		precioTotal = cantidad * precio;
-// 		alert("Usted ha ordenado " + cantidad + " " + bebida + ". Su total a abonar es $" + precioTotal  + ".");
-// 	} else { 
-// 		alert("Usted no ha ingresado una cantidad valida.")}
-// 	let padre = document.getElementById("padre");
-// 	console.log(padre);
-// 	let parrafo = document.createElement("p");
-// 	parrafo.innerHTML = "- " + cantidad + " " + bebida + ". TOTAL: $" + precioTotal;
-// 	padre.appendChild(parrafo);
-// }
+function seleccionarComida() {
+//busco el ID del producto
+	let comida = comidas.find(comida => comida.id == this.id);    
+	carrito.push(comida);
+}
+  //creo una variable con el boton para que se acceda al pop up correspondiente
+let btnSeleccionarComida = document.getElementsByClassName("btnSeleccionarComida");
+  //recorro los botones para que el click se asocie a la bebida que esta siendo seleccionada
+for (const boton of btnSeleccionarComida) {
+	boton.addEventListener("click", seleccionarComida);
+}
 
-// function elegirComida (comida, precio) {
-// 	alert("Su eleccion para comer fue " + comida + ".");
-// 	var cantidad = parseInt(prompt("¿Cuantos" + " " + comida + " " + "quieres ordenar? (sólo valores númericos)"))
-// 	if (cantidad < 100 && cantidad > 0) {
-// 		precioTotal = cantidad * precio;
-// 		alert("Usted ha ordenado " + cantidad + " " + comida + ". Su total a abonar es $" + precioTotal  + ".");
-// 	} else { 
-// 		alert("Usted no ha ingresado una cantidad valida.")}
-// }
+let btnAgregarAlCarrito = document.getElementsByClassName("btnCarrito");
+console.log(btnAgregarAlCarrito);
+function agregarAlCarrito() {
+    let divCarrito = document.getElementById("carrito");
+	let contenidoCarrito = document.createElement("p")
+	for (const producto of carrito) {
+		contenidoCarrito.innerHTML = `${producto.nombre} - $${producto.precio}`
+		divCarrito.appendChild(contenidoCarrito)
+	}
+}
 
-// function calcularCuotas () {
-// 	let cuotas = parseInt(prompt("En cuantas cuotas desea realizar su compra? Solo valores númericos."))
-// 	if (cuotas < 18 && cuotas > 0) {
-// 	alert("Su monto es de " + cuotas + " cuotas de $" + precioTotal / cuotas + ".");
-// 	} else (alert("Usted no ha ingresado una cantidad valida. Por favor, vuelva a intentarlo."))
-// }
-
-// let recomendaciones = [];
-// function miArray() {
-// 	do {
-// 	let entrada = prompt("¡Ayudenos a mejorar! ¿Qué productos le gustaría que agregemos a nuestra carta?");
-// 	recomendaciones.push(entrada.toUpperCase());
-// 	var input = prompt("Desea recomendar otro producto? si / no");
-// 	} while (input != "no")
-// 	alert("Gracias por recomendarnos: "+ "\n" + recomendaciones.join("\n") +"\n"+ "Lo tendremos en cuenta!");
-// 	console.log(recomendaciones);
-// }
-// function ordernarProductos() {
-// 	let miArrayDeObjetos = [cafeNegro.nombre, cafeCortado.nombre, jugoDeNaranja.nombre, capuchino.nombre, te.nombre, brownie.nombre, medialunasJYQ.nombre, medialunas.nombre, lemonie.nombre, tostado.nombre];
-// 	miArrayDeObjetos.sort((a, b) => a.localeCompare(b));
-// 	console.log(miArrayDeObjetos);
-// 	alert("Los productos ordenados alfabeticamente son: "+"\n"+ miArrayDeObjetos.join("\n"));
-// }
-// let miArraydeBebidas = [];
-// miArraydeBebidas.push(cafeNegro, capuchino, te, jugoDeNaranja, cafeCortado);
-
-// function manipulandoElDOM () {
-// 	for (bebida of miArraydeBebidas) {
-// 	let boton = document.getElementById("boton")
-// 	let carta = document.createElement("p")
-// 	carta.innerHTML = `<h3>Nombre: ${bebida.nombre}</h3>
-// 						<p>Precio: ${bebida.precio}</p>
-// 						<p>Cant. de calorias: ${bebida.calorias}</p>`
-// 	boton.appendChild(carta)
-// 	}
-// }
+//EVENTO DE AGREGAR AL CARRITO
+for (const boton of btnAgregarAlCarrito) {
+	boton.addEventListener("click", agregarAlCarrito);
+}
+console.log(carrito);

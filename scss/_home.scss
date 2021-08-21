@@ -80,13 +80,37 @@ html {
     display: flex;
     flex-direction: row;
     text-align: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
-.recomendaciones {
-    padding: 20px;
+.modal-header{
+    height: 20rem;
+    background-size: contain;
+}
+.modal-title {
+    font-size: 3rem;
+    padding-left: 100px;
+    padding-top: 70px;
+}
+.iconoCarrito {
+    float: right;
+    margin: 50px;
+    font-size: 2rem;
+    border-radius: 50%;
+    padding: 25px;
+    border: 1px solid black;
+    color: black;
+}
+.iconoCarrito:hover {
+    color: black;
+}
+.textoCarrito {
+    text-align: center;
+    font-size: 30px;
+}
+#carrito p {
+    font-size: 30px;
     text-align: center;
 }
-
 .btn-rec {font-size: 30px;}
 @media only screen and (max-width: 1400px) {
     html {

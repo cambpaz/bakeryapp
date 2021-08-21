@@ -229,35 +229,43 @@ html {
       -ms-flex-direction: row;
           flex-direction: row;
   text-align: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-}
-
-.recomendaciones {
-  padding: 20px;
-  text-align: center;
-}
-
-.modal-dialog {
-  margin-left: 30%;
-}
-
-.modal-content {
-  width: 43.75rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .modal-header {
-  height: 25rem;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(241, 234, 224, 0.614)), to(rgba(241, 234, 224, 0.614))), url(../assets/img/1.jpg);
-  background-image: linear-gradient(rgba(241, 234, 224, 0.614), rgba(241, 234, 224, 0.614)), url(../assets/img/1.jpg);
+  height: 20rem;
   background-size: contain;
 }
 
 .modal-title {
-  -ms-grid-column-align: center;
-      justify-self: center;
-  margin: 25%;
   font-size: 3rem;
+  padding-left: 100px;
+  padding-top: 70px;
+}
+
+.iconoCarrito {
+  float: right;
+  margin: 50px;
+  font-size: 2rem;
+  border-radius: 50%;
+  padding: 25px;
+  border: 1px solid black;
+  color: black;
+}
+
+.iconoCarrito:hover {
+  color: black;
+}
+
+.textoCarrito {
+  text-align: center;
+  font-size: 30px;
+}
+
+#carrito p {
+  font-size: 30px;
+  text-align: center;
 }
 
 .btn-rec {

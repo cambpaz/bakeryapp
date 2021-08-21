@@ -51,6 +51,7 @@
 		</section>   
 	</div>
 	<main>
+		<a href="#container-carrito"><i class="fas iconoCarrito fa-shopping-cart"></i></a>
 		<div class="container-pasos">
             <h4 id="paso1">PASO 1</h4>
             <p>Elegí tu bebida</p>
@@ -62,16 +63,24 @@
 			</div>
 		</div>
 		<div class="container-pasos">
+			<a href="#container-carrito"><i class="fas iconoCarrito fa-shopping-cart"></i></a>
 			<h4 id="paso2">PASO 2</h4>
             <p>Elegí tu comida</p>
 			<div class="container-comidas" id="container-comidas">
 				<!-- AQUI VAN LAS CARDS DE COMIDA -->
 			</div>
+			<div id="container-modal-comidas">
+				<!-- AQUI VAN LOS MODAL -->
+			</div>
 		</div>
 	</main>
-	<aside class="recomendaciones">
-		<button class="btn estilo-boton btn-rec" onclick="miArray()">RECOMEDACIONES</button>
-		<button class="btn estilo-boton btn-rec" onclick="ordernarProductos()">ORDENAR POR ORDEN ALFABETICO</button>
+	<aside>
+		<div id="container-carrito">
+			<p class="textoCarrito">TU CARRITO HASTA EL MOMENTO ESTA COMPUESTO POR:</p>
+			<div id="carrito">
+				<!-- AQUI VA EL CARRITO DE COMPRAS -->
+			</div>
+		</div>
 	</aside>
 	<script src="js/main.js"></script>	
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
