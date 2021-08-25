@@ -1,6 +1,7 @@
 //CONSTRUCTOR OBJETOS
 //molde bebidas
-function Bebida(id, nombre, precio, calorias, img) {
+function Bebida(boton, id, nombre, precio, calorias, img) {
+this.boton = boton; // agrego esta propiedad para asignarle un ID diferente al boton de agregar al carrito (ya que el id lo usa el boton de seleccionar)
 this.id = parseInt(id);
 this.modalId = "modal" + this.id;
 this.nombre = nombre;
@@ -12,15 +13,16 @@ this.cantCalorias = function () {alert("Esta bebida tiene un total de " + this.c
 }
 //creo los objetos mediante un array de objetos vacio
 const bebidas = [];
-bebidas.push(new Bebida(1, "Cafe negro", 100, 10));
-bebidas.push(new Bebida(2, "Capuchino", 110, 10));
-bebidas.push(new Bebida(3, "Jugo de naranja", 70, 10));
-bebidas.push(new Bebida(4, "Te", 70, 10));
-bebidas.push(new Bebida(5, "Cafe Cortado", 110, 10));
+bebidas.push(new Bebida(30, 1, "Cafe negro", 100, 10));
+bebidas.push(new Bebida(31, 2, "Capuchino", 110, 10));
+bebidas.push(new Bebida(32, 3, "Jugo de naranja", 70, 10));
+bebidas.push(new Bebida(33, 4, "Te", 70, 10));
+bebidas.push(new Bebida(34, 5, "Cafe Cortado", 110, 10));
 
 console.log(bebidas);
 //molde comidas
-function Comida(id, nombre, precio, calorias, img) {
+function Comida(boton, id, nombre, precio, calorias, img) {
+this.boton = boton; 
 this.id = parseInt(id);
 this.modalId = "modal" + this.id;
 this.nombre = nombre;
@@ -32,11 +34,11 @@ this.cantCalorias = function () {alert("Esta comida tiene un total de " + this.c
 }
 //creo las comidas
 const comidas = [];
-comidas.push(new Comida(6, "Medialunas", 120, 280));
-comidas.push(new Comida(7, "Brownie", 140, 250))
-comidas.push(new Comida(8, "Tostado", 150, 300));
-comidas.push(new Comida(9,"Lemonie", 130, 240));
-comidas.push(new Comida(10, "Medialunas con jamón y queso", 120, 400));
+comidas.push(new Comida(35, 6, "Medialunas", 120, 280));
+comidas.push(new Comida(36, 7, "Brownie", 140, 250))
+comidas.push(new Comida(37, 8, "Tostado", 150, 300));
+comidas.push(new Comida(38, 9,"Lemonie", 130, 240));
+comidas.push(new Comida(39, 10, "Medialunas con jamón y queso", 120, 400));
 //accedo al container de las bebidas
 let container = document.getElementById("container-bebidas")
 
@@ -76,7 +78,7 @@ for (const bebida of bebidas) {
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button value="submit" type="button" data-dismiss="modal" id="agregarCarrito${bebida.id}" class="btn btn-primary btnCarrito">Agregar al carrito</button>
+						<button value="submit" type="button" data-dismiss="modal" id="${bebida.boton}" class="btn btn-primary btnCarritoBebida">Agregar al carrito</button>
 					</div>
 				</div>
 			</div>
@@ -121,7 +123,7 @@ for (const comida of comidas) {
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button value="submit" type="button" data-dismiss="modal" id="agregarCarrito${comida.id}" class="btn btn-primary btnCarrito">Agregar al carrito</button>
+					<button value="submit" type="button" data-dismiss="modal" id="${comida.boton}" class="btn btn-primary btnCarritoComida">Agregar al carrito</button>
 				</div>
 			</div>
 		</div>
@@ -132,44 +134,55 @@ for (const comida of comidas) {
 //////////////////////////////////////////////////////////////////  EVENTOS
 // creO un array vacio QUE SERAN LAS BEBIDAS SELECCIONADAS
 let carrito = [];
-//creo la funcion que luego utilizare en el evento
-function seleccionarBebida() {
-  //busco el ID del producto
-	let bebida = bebidas.find(bebida => bebida.id == this.id);    
-	carrito.push(bebida);
+let btnAgregarBebidaAlCarrito = document.getElementsByClassName("btnCarritoBebida");
+
+function agregarBebidaAlCarrito() {
+	let bebidaSeleccionada = bebidas.find(bebida => bebida.boton == this.id);
+	console.log(bebidaSeleccionada);
+	carrito.push(bebidaSeleccionada);
+	console.log(carrito);
+	localStorage.setItem("CARRITO", JSON.stringify(carrito));
 }
-//creo una variable con el boton para que se acceda al pop up correspondiente
-let btnSeleccionarBebida = document.getElementsByClassName("btnSeleccionarBebida");
-//recorro los botones para que el click se asocie a la bebida que esta siendo seleccionada
-for (const boton of btnSeleccionarBebida) {
-	boton.addEventListener("click", seleccionarBebida);
+//EVENTO DE AGREGAR LA BEBIDA AL CARRITO
+for (const boton of btnAgregarBebidaAlCarrito) {
+    boton.addEventListener("click", agregarBebidaAlCarrito);
+}
+////////////////////////////////////////////////////////////////////////////////////
+let btnAgregarComidaAlCarrito = document.getElementsByClassName("btnCarritoComida");
+function agregarComidaAlCarrito() {
+    let comidaSeleccionada = comidas.find(comida => comida.boton == this.id);
+    carrito.push(comidaSeleccionada);
+    console.log(carrito);
+	localStorage.setItem("CARRITO", JSON.stringify(carrito));
 }
 
-function seleccionarComida() {
-//busco el ID del producto
-	let comida = comidas.find(comida => comida.id == this.id);    
-	carrito.push(comida);
-}
-  //creo una variable con el boton para que se acceda al pop up correspondiente
-let btnSeleccionarComida = document.getElementsByClassName("btnSeleccionarComida");
-  //recorro los botones para que el click se asocie a la bebida que esta siendo seleccionada
-for (const boton of btnSeleccionarComida) {
-	boton.addEventListener("click", seleccionarComida);
+for (const boton of btnAgregarComidaAlCarrito) {
+    boton.addEventListener("click", agregarComidaAlCarrito);
 }
 
-let btnAgregarAlCarrito = document.getElementsByClassName("btnCarrito");
-console.log(btnAgregarAlCarrito);
-function agregarAlCarrito() {
-    let divCarrito = document.getElementById("carrito");
-	let contenidoCarrito = document.createElement("p")
-	for (const producto of carrito) {
-		contenidoCarrito.innerHTML = `${producto.nombre} - $${producto.precio}`
-		divCarrito.appendChild(contenidoCarrito)
+////////////////////////////////////////////////////////////////////////////////////
+
+let btnVerCarrito = document.getElementById('verCarrito');
+
+function verMiCarrito() {
+	let carritoGuardado = JSON.parse(localStorage.getItem("CARRITO"));
+	let precioAcumulado = [];
+	console.log(precioAcumulado);
+	for (const producto of carritoGuardado) {
+		precioAcumulado.push(producto.precio)
 	}
+	let reducer = function(acumulador, currentValue) {return acumulador + currentValue};
+	let precioTotal = precioAcumulado.reduce(reducer, 0);
+	console.log(precioTotal);
+	let divCarrito = document.getElementById("carrito");
+	let contenidoCarrito = document.createElement("p");
+	for (const producto of carritoGuardado) {
+	contenidoCarrito.innerHTML += `${producto.nombre} - $${producto.precio} <br>`
+	divCarrito.appendChild(contenidoCarrito); 
+	}
+	let total = document.getElementById("totalCarrito");
+	total.innerHTML = `Precio total = $${precioTotal}`;
 }
 
-//EVENTO DE AGREGAR AL CARRITO
-for (const boton of btnAgregarAlCarrito) {
-	boton.addEventListener("click", agregarAlCarrito);
-}
-console.log(carrito);
+btnVerCarrito.addEventListener("click", verMiCarrito)
+

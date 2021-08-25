@@ -112,7 +112,19 @@ html {
     text-align: center;
 }
 .btn-rec {font-size: 30px;}
-@media only screen and (max-width: 1400px) {
+
+#verCarrito {
+    font-size: 1.875rem;
+    margin: 20px;
+}
+#container-carrito {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1500px) {
     html {
         font-size: 11px;
     }

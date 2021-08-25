@@ -32,7 +32,7 @@
 									<a href="" class="nav-link">CONTACTO</a>
 								</li>
 								<li>
-									<a href="" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+									<a href="#verCarrito" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
 								</li>
 							</ul>
 						</nav>
@@ -76,12 +76,14 @@
 	</main>
 	<aside>
 		<div id="container-carrito">
-			<p class="textoCarrito">TU CARRITO HASTA EL MOMENTO ESTA COMPUESTO POR:</p>
+			<button class="btn estilo-boton" id="verCarrito">VER MI CARRITO</button>
 			<div id="carrito">
 				<!-- AQUI VA EL CARRITO DE COMPRAS -->
 			</div>
+			<p style="font-size: 30px;" id="totalCarrito"></p>
 		</div>
 	</aside>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="js/main.js"></script>	
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script>
