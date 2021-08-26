@@ -39,29 +39,23 @@ comidas.push(new Comida(36, 7, "Brownie", 140, 250))
 comidas.push(new Comida(37, 8, "Tostado", 150, 300));
 comidas.push(new Comida(38, 9,"Lemonie", 130, 240));
 comidas.push(new Comida(39, 10, "Medialunas con jamón y queso", 120, 400));
-//accedo al container de las bebidas
-let container = document.getElementById("container-bebidas")
+
 
 //utilizo un bucle for of para crear las card en el document HTML
 for (const bebida of bebidas) {
-	let div = document.createElement("div");
-	div.innerHTML = `<div data-aos="flip-left" class="card card-paso1">
+	$('#container-bebidas').append(`<div data-aos="flip-left" class="card card-paso1">
 	<img src="assets/img/${bebida.id}.jpg" class="card-img-top" alt="...">
 	<div class="card-body">
 		<h5 class="card-title">${bebida.nombre}</h5>
 		<p class="precioBebida">$${bebida.precio}</p>
 		<button type="button" id="${bebida.id}" class="btn estilo-boton btnSeleccionarBebida" data-toggle="modal" data-target="#${bebida.modalId}">SELECCIONAR</button> <br>
 	</div>
-	</div>`
-	container.appendChild(div)
+	</div>`)
 }
-//accedo al container de los modal
-let containerModal = document.getElementById("container-modal")
+
 //CREO LOS MODAL UNO POR UNO
 for (const bebida of bebidas) {
-	let divPopUp = document.createElement("div");
-	divPopUp.innerHTML = 
-		`<div class="modal fade" id="${bebida.modalId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	$('#container-modal').append(`<div class="modal fade" id="${bebida.modalId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content modal-lg">
 					<div style="background-image: linear-gradient(rgba(241, 234, 224, 0.614),rgba(241, 234, 224, 0.614)), url(../assets/img/${bebida.id}.jpg);" class="modal-header">
@@ -82,31 +76,26 @@ for (const bebida of bebidas) {
 					</div>
 				</div>
 			</div>
-	</div>` 
-	containerModal.appendChild(divPopUp);
+	</div>` )
 }
 
 
 ////////////////////////////////////////////////////////////////////////// COMIDAS
-let containerComida = document.getElementById("container-comidas")
+
 for (const comida of comidas) {
-	let div = document.createElement("div");
-	div.innerHTML = `<div data-aos="flip-left" class="card card-paso1">
+	$('#container-comidas').append(`<div data-aos="flip-left" class="card card-paso1">
 	<img src="assets/img/${comida.id}.jpg" class="card-img-top" alt="...">
 	<div class="card-body">
 		<h5 class="card-title">${comida.nombre}</h5>
 		<p class="precioBebida">$${comida.precio}</p>
 		<button type="button" id="${comida.id}" class="btn estilo-boton btnSeleccionarComida" data-toggle="modal" data-target="#${comida.modalId}">SELECCIONAR</button> <br>
 	</div>
-	</div>`
-	containerComida.appendChild(div)
+	</div>`);
 }
-let padreModalComida = document.getElementById("container-modal-comidas");
-console.log(padreModalComida);
+
+
 for (const comida of comidas) {
-	let divPopUpComida = document.createElement("div");
-	divPopUpComida.innerHTML = 
-	`<div class="modal fade" id="${comida.modalId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	$('#container-modal-comidas').append(`<div class="modal fade" id="${comida.modalId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content modal-lg">
 				<div style="background-image: linear-gradient(rgba(241, 234, 224, 0.614),rgba(241, 234, 224, 0.614)), url(../assets/img/${comida.id}.jpg);" class="modal-header">
@@ -127,8 +116,7 @@ for (const comida of comidas) {
 				</div>
 			</div>
 		</div>
-	</div>` 
-	padreModalComida.appendChild(divPopUpComida);
+	</div>`)
 }
 
 //////////////////////////////////////////////////////////////////  EVENTOS
@@ -166,13 +154,8 @@ let btnVerCarrito = document.getElementById('verCarrito');
 
 function verMiCarrito() {
 	let carritoGuardado = JSON.parse(localStorage.getItem("CARRITO"));
-	let precioAcumulado = [];
-	console.log(precioAcumulado);
-	for (const producto of carritoGuardado) {
-		precioAcumulado.push(producto.precio)
-	}
-	let reducer = function(acumulador, currentValue) {return acumulador + currentValue};
-	let precioTotal = precioAcumulado.reduce(reducer, 0);
+	let reducer = function(acumulador, currentValue) {return acumulador + currentValue.precio};
+	let precioTotal = carritoGuardado.reduce(reducer, 0);
 	console.log(precioTotal);
 	let divCarrito = document.getElementById("carrito");
 	let contenidoCarrito = document.createElement("p");
