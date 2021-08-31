@@ -73,12 +73,12 @@ for (const bebida of bebidas) {
 					</div>
 					<div class="modal-body">
 						<!-- <p>Elija la cantidad de unidades que quiere ordenar</p> -->
-						<!-- <form action="" class="cantidad-form"> 
+						<!-- <form action="" class="cantidad-form">
 							<span class="badge">${bebida.cantidad}</span>
 							<a id="${bebida.id}" class="btn btn-info btn-add">+</a>
 							<a id="${bebida.id}" class="btn btn-danger btn-delete">x</a>
 							</p>
-						</form>-->
+						</form> -->
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -206,35 +206,36 @@ btnAgregarBebidaAlCarrito.forEach((boton) => {
 		//utilizo una funcion para que me actulice el numero de items en el carrito y me muestre el precio total
 		valoresDelCarrito(carrito);
 		//mostrar los items en el carrito
-		
-		// desplegarCarrito()
+
 	})
 })
 btnAgregarComidaAlCarrito.forEach((boton) => {
 	let id = boton.dataset.id;
 	boton.addEventListener("click", () => {
+		//agarro el producto desde el local storage
 		let itemCarro = {...LocalStorage.getComida(id)};
 		let productoEntro = false;
 		for (item of carrito) {
 			if (itemCarro.id == item.id) {
 				productoEntro = true;
-				itemCarro.cantidad += 1;
+				item.cantidad += 1;
 			} 
 		}
 		if (productoEntro == false) {
 			carrito = [...carrito, itemCarro];
 			itemCarro.cantidad += 1;
 		}
-		mostrarItemsCarrito();
+		mostrarItemsCarrito(itemCarro);
 		console.log(carrito);
+		//lo guardo en el local storage
 		LocalStorage.guardarCarrito(carrito);
+		//utilizo una funcion para que me actulice el numero de items en el carrito y me muestre el precio total
 		valoresDelCarrito(carrito);
-	}
-	)
-
-
-
+		//mostrar los items en el carrito
+		
+	})
 })
+
 //creo una funcion que me calculara el numero de items y el valor total del carrito
 function valoresDelCarrito(carrito) {
 	let totalCompra = 0;
@@ -268,12 +269,12 @@ function mostrarItemsCarrito () {
 	}
 	}
 
-// //FUNCION PARA AGREGAR MAS DE UNO DESDE EL MODAL
-// function addUnoCarrito() {
-// 	let producto = carrito.find(producto => producto.id == this.id);
-// 	producto.cantidad += 1;
-// 	$(this).parent().children()[1].innerHTML = producto.cantidad;
-// }
+//FUNCION PARA AGREGAR MAS DE UNO DESDE EL MODAL
+function addUnoCarrito() {
+	let producto = carrito.find(producto => producto.id == this.id);
+	producto.cantidad += 1;
+	$(this).parent().children()[1].innerHTML = producto.cantidad;
+}
 
 
 $(".btn-add").click(addUnoCarrito);
@@ -287,7 +288,7 @@ $(".btnAbrirCarrito").click(() => {
 	carritoOverlay.classList.add("transparentBcg");
 	carritoDOM.classList.add("showCart");
 })
-// // FUNCION CLEAR CART
+// FUNCION CLEAR CART
 // function vaciarCarrito () {	
 // 	$(".cart-content").empty()
 // 	let idProductos = carrito.map(item => item.id);
