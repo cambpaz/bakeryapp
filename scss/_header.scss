@@ -75,3 +75,27 @@ nav ul li a:hover::before {
 nav ul li .active {
     transform: scale(1.2);
 }
+.btnAbrirCarrito {
+    border-radius: 50%; 
+    border: 1px solid black;
+    position: fixed; 
+    top: 85%; 
+    right: 3%; 
+    transform: scale(1.1);
+    cursor: pointer;
+    z-index: 3;
+}
+.contendorCarritoFlotante {
+    position: relative;
+    cursor: pointer;
+}
+.carritoInicio {
+    margin: 1.4rem;      
+}
+.numeroDeItems {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    padding: 0 5px;
+    border-radius: 30%;
+}

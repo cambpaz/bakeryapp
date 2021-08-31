@@ -115,6 +115,35 @@ nav ul li .active {
           transform: scale(1.2);
 }
 
+.btnAbrirCarrito {
+  border-radius: 50%;
+  border: 1px solid black;
+  position: fixed;
+  top: 85%;
+  right: 3%;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  cursor: pointer;
+  z-index: 3;
+}
+
+.contendorCarritoFlotante {
+  position: relative;
+  cursor: pointer;
+}
+
+.carritoInicio {
+  margin: 1.4rem;
+}
+
+.numeroDeItems {
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  padding: 0 5px;
+  border-radius: 30%;
+}
+
 html {
   font-size: 16px;
 }
@@ -170,7 +199,7 @@ html {
 .container-pasos h4 {
   text-align: center;
   font-size: 2.5rem;
-  padding: 1em;
+  padding: 0.5em;
 }
 
 .container-pasos p {
@@ -180,9 +209,16 @@ html {
 }
 
 .card-paso1 {
-  margin: 30px;
-  height: 33rem;
-  width: 18rem;
+  margin: 1.875rem;
+  height: 28rem;
+  width: 15.625rem;
+}
+
+.flechapasos {
+  font-size: 4rem;
+  color: black;
+  text-align: center;
+  padding: 1.5rem;
 }
 
 .card-title {
@@ -208,14 +244,17 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .estilo-boton {
   margin-top: .75rem;
-  font-size: 1.4rem;
+  font-size: 1.1em;
   background-color: #E5D1B8;
   color: #2B2129;
   text-transform: uppercase;
@@ -239,6 +278,9 @@ html {
   text-align: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .modal-header {
@@ -252,58 +294,142 @@ html {
   padding-top: 70px;
 }
 
-.iconoCarrito {
-  float: right;
-  margin: 50px;
-  font-size: 2rem;
-  border-radius: 50%;
-  padding: 25px;
-  border: 1px solid black;
-  color: black;
-}
-
-.iconoCarrito:hover {
-  color: black;
-}
-
-.textoCarrito {
-  text-align: center;
-  font-size: 30px;
-}
-
-#carrito p {
-  font-size: 30px;
-  text-align: center;
-}
-
 .btn-rec {
   font-size: 30px;
 }
 
-#verCarrito {
-  font-size: 1.875rem;
-  margin: 20px;
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 1s ease-out;
+  transition: 1s ease-out;
+  background-color: rgba(238, 212, 187, 0.5);
+  z-index: 2;
+  visibility: hidden;
 }
 
-#container-carrito {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  overflow: scroll;
+  background-color: white;
+  z-index: 3;
+  padding: 1.5rem;
+  -webkit-transition: 1s ease-out;
+  transition: 1s ease-out;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.showCart {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.transparentBcg {
+  visibility: visible;
+}
+
+@media only screen and (min-width: 600px) {
+  .cart {
+    width: 30vh;
+    min-width: 450px;
+  }
+}
+
+.close-cart {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.cart h2 {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+.cart-item {
+  display: -ms-grid;
+  display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-grid-columns: auto 1fr auto;
+      grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.cart-item img {
+  width: 75px;
+  height: 75px;
+}
+
+.cart-item h4 {
+  font-size: .85rem;
+  text-transform: uppercase;
+}
+
+.cart-item h5 {
+  margin: 0.5rem 0;
+}
+
+.item-amount {
+  text-align: center;
+}
+
+.remove-item {
+  color: grey;
+  cursor: pointer;
+}
+
+.fa-chevron-up,
+.fa-chevron-down {
+  color: #708A81;
+  cursor: pointer;
+}
+
+.cart-footer {
+  margin-top: 2rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.cart-footer h3 {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.cantidad-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.remove-items {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1500px) {
   html {
     font-size: 11px;
+  }
+  .container-pasos h4 {
+    font-size: 4rem;
+  }
+  .container-pasos p {
+    padding: 0;
+    margin-bottom: 0;
   }
   .container-bebidas {
     -webkit-box-pack: center;
@@ -312,12 +438,10 @@ html {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .container-comida {
+  .container-comidas {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
   }
   .card-paso1 {
     width: 25rem;

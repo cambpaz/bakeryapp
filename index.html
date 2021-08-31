@@ -31,9 +31,6 @@
 								<li class="nav-item">
 									<a href="" class="nav-link">CONTACTO</a>
 								</li>
-								<li>
-									<a href="#verCarrito" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
-								</li>
 							</ul>
 						</nav>
 					</header>
@@ -48,43 +45,62 @@
 				<h3>¡Hace tu pedido online y recibilo en la puerta de tu casa!</h3>
 				<a href="#paso1"><i class="flecha fas fa-arrow-down"></i></i></a>
 			</div>
-		</section>   
+		</section>
+		<aside class="btnAbrirCarrito">
+			<div class="contendorCarritoFlotante">
+				<span class="nav-icon"><i class="fas fa-shopping-cart carritoInicio"></i></span>
+				<div class="numeroDeItems">0</div>
+			</div>
+		</aside>
 	</div>
 	<main>
-		<a href="#container-carrito"><i class="fas iconoCarrito fa-shopping-cart"></i></a>
 		<div class="container-pasos">
             <h4 id="paso1">PASO 1</h4>
             <p>Elegí tu bebida</p>
 			<div class="container-bebidas" id="container-bebidas">
 				<!-- AQUI VAN LAS CARDS DE BEBIDAS -->
 			</div>
+			<p class="flechapasos"><a href="#paso2"><i class="flechapasos fas fa-arrow-down"></i></i></a></p>
 			<div id="container-modal">
 				<!-- AQUI VAN LOS MODAL -->
 			</div>
 		</div>
 		<div class="container-pasos">
-			<a href="#container-carrito"><i class="fas iconoCarrito fa-shopping-cart"></i></a>
 			<h4 id="paso2">PASO 2</h4>
             <p>Elegí tu comida</p>
 			<div class="container-comidas" id="container-comidas">
 				<!-- AQUI VAN LAS CARDS DE COMIDA -->
 			</div>
+			<p class="flechapasos"><a href="#paso1"><i class="flechapasos fas fa-arrow-down"></i></i></a></p>
 			<div id="container-modal-comidas">
 				<!-- AQUI VAN LOS MODAL -->
 			</div>
 		</div>
 		<div class="container-pasos">
-			<div id="container-carrito">
-				<h4>PASO 3</h4>
-				<p>Confirmar carrito</p>
-				<button class="btn estilo-boton" id="verCarrito">VER MI CARRITO</button>
-				<div id="carrito">
-					<!-- AQUI VA EL CARRITO DE COMPRAS -->
-				</div>
-				<p style="font-size: 30px;" id="totalCarrito"></p>
-			</div>
+			<h4>PASO 3</h4>
 		</div>
 	</main>
+	<!-- CART -->
+	<aside class="cart-overlay">
+		<div class="cart">
+			<span class="close-cart">
+				<i class="fas fa-window-close"></i>
+			</span>
+			<h2>TU CARRITO</h2>
+			<div class="cart-content">
+			<!-- CART ITEM  -->
+				<!-- <div class="cart-item">
+					
+				</div> -->
+			<!-- END OF CART ITEM  -->
+			</div>
+			<div class="cart-footer">
+				<h3>your total : $ <span class="cart-total">0</span></h3>
+				<button class="clear-cart estilo-boton">clear cart</button>
+			</div>
+		</div>
+	</aside>
+	<!-- END OF CART -->
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="js/main.js"></script>	
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
