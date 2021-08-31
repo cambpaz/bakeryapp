@@ -65,7 +65,7 @@ for (const bebida of bebidas) {
 	$('#container-modal').append(`<div class="modal fade" id="${bebida.modalId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content modal-lg">
-					<div style="background-image: linear-gradient(rgba(241, 234, 224, 0.614),rgba(241, 234, 224, 0.614)), url(../assets/img/${bebida.id}.jpg);" class="modal-header">
+					<div style="background-image: linear-gradient(rgba(241, 234, 224, 0.614),rgba(241, 234, 224, 0.614)), url(assets/img/${bebida.id}.jpg);" class="modal-header">
 						<h5 class="modal-title" id="exampleModalLabel">${bebida.nombre}</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
@@ -108,7 +108,7 @@ for (const comida of comidas) {
 	$('#container-modal-comidas').append(`<div class="modal fade" id="${comida.modalId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content modal-lg">
-				<div style="background-image: linear-gradient(rgba(241, 234, 224, 0.614),rgba(241, 234, 224, 0.614)), url(../assets/img/${comida.id}.jpg);" class="modal-header">
+				<div style="background-image: linear-gradient(rgba(241, 234, 224, 0.614),rgba(241, 234, 224, 0.614)), url(assets/img/${comida.id}.jpg);" class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">${comida.nombre}</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
