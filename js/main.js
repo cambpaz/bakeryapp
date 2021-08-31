@@ -270,14 +270,14 @@ function mostrarItemsCarrito () {
 	}
 
 //FUNCION PARA AGREGAR MAS DE UNO DESDE EL MODAL
-function addUnoCarrito() {
-	let producto = carrito.find(producto => producto.id == this.id);
-	producto.cantidad += 1;
-	$(this).parent().children()[1].innerHTML = producto.cantidad;
-}
+// function addUnoCarrito() {
+// 	let producto = carrito.find(producto => producto.id == this.id);
+// 	producto.cantidad += 1;
+// 	$(this).parent().children()[1].innerHTML = producto.cantidad;
+// }
 
 
-$(".btn-add").click(addUnoCarrito);
+// $(".btn-add").click(addUnoCarrito);
 
 //BOTONES PARA ABRIR Y CERRAR EL CARRITO
 $(".close-cart").click(() => {
