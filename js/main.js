@@ -268,12 +268,12 @@ function mostrarItemsCarrito () {
 	}
 	}
 
-//FUNCION PARA AGREGAR MAS DE UNO DESDE EL MODAL
-function addUnoCarrito() {
-	let producto = carrito.find(producto => producto.id == this.id);
-	producto.cantidad += 1;
-	$(this).parent().children()[1].innerHTML = producto.cantidad;
-}
+// //FUNCION PARA AGREGAR MAS DE UNO DESDE EL MODAL
+// function addUnoCarrito() {
+// 	let producto = carrito.find(producto => producto.id == this.id);
+// 	producto.cantidad += 1;
+// 	$(this).parent().children()[1].innerHTML = producto.cantidad;
+// }
 
 
 $(".btn-add").click(addUnoCarrito);
@@ -287,7 +287,7 @@ $(".btnAbrirCarrito").click(() => {
 	carritoOverlay.classList.add("transparentBcg");
 	carritoDOM.classList.add("showCart");
 })
-// FUNCION CLEAR CART
+// // FUNCION CLEAR CART
 // function vaciarCarrito () {	
 // 	$(".cart-content").empty()
 // 	let idProductos = carrito.map(item => item.id);
