@@ -1,5 +1,6 @@
 $(".mensaje-carritoVacio").hide()
 $("#formConfirmar").on("submit", function (e) {
+    //SELECCIONO EL HTML PARA LUEGO ACTIVAR EL MODAL DE CONFIRMACION
     let btn = document.getElementById("botonConfirmacion");
     const closeBtn = document.querySelector('.modalBtn');
     const overlay = document.querySelector("#overlay");
@@ -14,9 +15,11 @@ $("#formConfirmar").on("submit", function (e) {
     const URLPOST = 'https://jsonplaceholder.typicode.com/posts';
     console.log(info.productos.length);
     console.log(info.productos);
+    //Me muestra que el array tiene una length de 2 por default ??
     if (info.productos.length !== 2) {
         $.post(URLPOST, info, function (respuesta, estado) {
             if (estado == "success") {
+                //PARA ACTIVAR EL MODAL DE CONFIRMACION
                 document.querySelector(btn.dataset.target).classList.add("active");
                 overlay.classList.add("active");
                 console.log(btn.dataset.target);
