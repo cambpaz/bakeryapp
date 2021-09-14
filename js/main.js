@@ -1,4 +1,3 @@
-
 // CUANDO SE CARGUE EL DOCUMENTO
 $(document).ready(
 	//CARGAR DATOS DE MANERA LOCAL
@@ -26,5 +25,3 @@ $(document).ready(
 			LocalStorage.guardarComida(comidas)
 	}),
 )
-
-

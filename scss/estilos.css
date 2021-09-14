@@ -557,6 +557,61 @@ html {
   }
 }
 
+.modalConfirmacion {
+  width: 450px;
+  position: fixed;
+  top: -45%;
+  left: -50%;
+  -webkit-transition: top 0.7s;
+  transition: top 0.7s;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 6px;
+  z-index: 3;
+}
+
+.modalBtn {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  padding: .625rem 1.25rem;
+  cursor: pointer;
+}
+
+.modalConfirmacion.active {
+  top: 45%;
+  left: 50%;
+}
+
+.modalHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modalHeader h4 {
+  margin: 2rem;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#overlay.active {
+  display: block;
+}
+
 .container-foto {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(243, 211, 169, 0.614)), to(rgba(214, 196, 172, 0.514))), url(../assets/img/portada-nosotros1.jpg);
   background-image: linear-gradient(rgba(243, 211, 169, 0.614), rgba(214, 196, 172, 0.514)), url(../assets/img/portada-nosotros1.jpg);

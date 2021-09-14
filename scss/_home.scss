@@ -372,3 +372,48 @@ html {
         font-size: 1.5rem !important;
     }
 }
+
+//MODALES
+
+.modalConfirmacion {
+    width: 450px;
+    position: fixed;
+    top: -45%;
+    left: -50%;
+    transition: top 0.7s;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 6px;
+    z-index: 3;
+}
+.modalBtn {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    padding: .625rem 1.25rem;
+    cursor: pointer;
+}
+.modalConfirmacion.active {
+    top: 45%;
+    left: 50%;
+}
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+}
+.modalHeader h4 {
+    margin: 2rem;
+}
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#overlay.active{
+    display: block;
+}

@@ -16,7 +16,7 @@
 
 <body>
 	<div class="container-imagen">
-		
+
 		<div class="container-fluid container-header">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12">
@@ -84,6 +84,19 @@
 			</div>
 		</div>
 		<div class="container-pasos">
+			<div class="modalConfirmacion" id="modalConfirmacion">
+				<div class="modalHeader">
+					<h4>¡Su compra ha sido realizada con éxito!</h4>
+					<button data-target="#modal12" class="modalBtn">&times;</button>
+				</div>
+				<p class="modal-texto">¡Gracias por confiar en nosotros! En las próximas horas su pedido será enviado a preparación.</p>
+			</div>
+			<aside class="mensaje-carritoVacio">
+				<p class="mensaje-texto">¡Su carrito esta vacio!</p>
+			</div>
+			</aside>
+			
+			<div id="overlay"></div>
 			<h4 id="paso3" class="pasos-texto">PASO 3</h4>
 			<p>CONFIRMAR TU COMPRA</p>
 			<div class="container-confirmacion">
@@ -92,8 +105,8 @@
 						<form id="formConfirmar">
 							<div class="form-group">
 								<label for="name">Nombre Completo</label>
-								<input type="text" name="Name" id="name" placeholder="Juan Perez" required
-									minlength="3" maxlength="25" />
+								<input type="text" name="Name" id="name" placeholder="Juan Perez" required minlength="3"
+									maxlength="25" />
 							</div>
 							<div class="form-group">
 								<label for="email">Email</label>
@@ -101,10 +114,12 @@
 							</div>
 							<div class="form-group">
 								<label for="direccion">Direccion</label>
-								<input type="text" name="Direccion" id="direccion" placeholder="Calle falsa 123" required />
+								<input type="text" name="Direccion" id="direccion" placeholder="Calle falsa 123"
+									required />
 							</div>
 							<div class="form-group">
-								<button type="submit" class="submit"><i class="far fa-paper-plane"></i>CONFIRMAR COMPRA</button>
+								<button type="submit" id="botonConfirmacion" data-target="#modalConfirmacion"
+									class="submit"><i class="far fa-paper-plane"></i>CONFIRMAR COMPRA</button>
 							</div>
 						</form>
 					</div>
@@ -119,7 +134,7 @@
 		</div>
 	</main>
 	<!-- CART -->
-	<aside class="cart-overlay">
+	<div class="cart-overlay">
 		<div class="cart">
 			<span class="close-cart">
 				<i class="fas fa-window-close"></i>
@@ -128,7 +143,7 @@
 			<div class="cart-content">
 				<!-- CART ITEM  -->
 				<div class="cart-item">
-					
+
 				</div>
 				<!-- END OF CART ITEM  -->
 			</div>
@@ -137,7 +152,7 @@
 				<button class="clear-cart estilo-boton">VACIAR CARRITO</button>
 			</div>
 		</div>
-	</aside>
+	</div>
 	<!-- END OF CART -->
 	<script src="https://code.jquery.com/jquery-3.6.0.js"
 		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>

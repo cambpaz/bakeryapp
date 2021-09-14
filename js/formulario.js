@@ -1,9 +1,13 @@
+$(".mensaje-carritoVacio").hide()
 $("#formConfirmar").on("submit", function (e) {
+    let btn = document.getElementById("botonConfirmacion");
+    const closeBtn = document.querySelector('.modalBtn');
+    const overlay = document.querySelector("#overlay");
     e.preventDefault();
 
     formValues = $(this).serializeArray();
     const info = {
-        formValues,
+        form: formValues,
         productos: JSON.stringify(carrito),
         total: valoresDelCarrito(carrito)
     }
@@ -13,7 +17,13 @@ $("#formConfirmar").on("submit", function (e) {
     if (info.productos.length !== 2) {
         $.post(URLPOST, info, function (respuesta, estado) {
             if (estado == "success") {
-                alert("¡Muchas gracias por confiar en nosotros! Su pedido sera enviado a preparacion.")
+                document.querySelector(btn.dataset.target).classList.add("active");
+                overlay.classList.add("active");
+                console.log(btn.dataset.target);
+                closeBtn.addEventListener("click", () => {
+                    document.querySelector(btn.dataset.target).classList.remove("active");
+                    overlay.classList.remove('active');
+                })
             }
         })
         document.getElementById("formConfirmar").reset();
@@ -21,7 +31,8 @@ $("#formConfirmar").on("submit", function (e) {
         $(".cart-total").text(0);
         $(".numeroDeItems").text(0);
         carrito = [];
-    
         localStorage.setItem("Carrito", JSON.stringify(carrito))
-    } else { alert("Su carrito esta vacio!")}
+    } else {
+        $(".mensaje-carritoVacio").fadeIn(1000).delay(1000).fadeOut(2000)
+    }
 });
