@@ -45,7 +45,6 @@ class LocalStorage {
 let contenidoCarrito = document.querySelector(".cart-content");
 let carritoOverlay = document.querySelector(".cart-overlay");
 let carritoDOM = document.querySelector(".cart");
-let btnEliminarProducto = [...document.getElementsByClassName(".remove-items")];
 
 function comprarBebida(e) {
 	e.preventDefault();
