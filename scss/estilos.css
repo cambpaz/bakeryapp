@@ -515,6 +515,11 @@ html {
   width: 40rem;
 }
 
+.texto-confirmar {
+  text-align: center;
+  font-size: 2rem;
+}
+
 .carrito-contenedor {
   margin-right: 10rem;
 }
