@@ -1,70 +1,105 @@
 @import "estandar";
+
 html {
     font-size: 16px;
 }
+
 .container-imagen {
-    background-image: linear-gradient(rgba(243, 211, 169, 0.614),rgba(214, 196, 172, 0.514)), url(../assets/img/fondo-desayuno.jpg);
+    background-image: linear-gradient(rgba(243, 211, 169, 0.614), rgba(214, 196, 172, 0.514)), url(../assets/img/fondo-desayuno.jpg);
     background-size: cover;
     height: 100vh;
 }
+
+.mensaje-agregado {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 4;
+}
+
+.mensaje-texto {
+    color: white;
+    z-index: 4;
+    position: fixed;
+    top: 70%; 
+    right: 3%; 
+    text-align: center;
+    padding: .5rem;
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    background-color: $colorPrimario;
+}
+
 .container-portada {
     height: 90vh;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     text-transform: uppercase;
     text-align: center;
 }
+
 .container-portada h2 {
     width: 120em;
     max-width: 95%;
     font-size: $fuentetitulo;
     padding: $paddingmd;
 }
+
 .container-portada h3 {
     max-width: 95%;
     font-size: $fuentesubtitulo;
 }
+
 .flecha {
     font-size: 4rem;
     color: black;
     padding: $paddinglg;
 }
+
 .flecha:hover {
     color: black;
 }
-.container-pasos h4 {
+
+.pasos-texto {
     text-align: center;
-    font-size: $fuentetexto-lg;
+    font-size: 3.2rem;
     padding: $paddingmd;
 }
+
 .container-pasos p {
     text-align: center;
     font-size: 30px;
     padding: $paddingxs $paddingmd;
 }
+
 .card-paso1 {
     margin: 1.875rem;
     height: 28rem;
     width: 15.625rem;
-}  
+}
+
 .flechapasos {
     font-size: 4rem;
     color: black;
     text-align: center;
     padding: 1.5rem;
 }
+
 .card-title {
     text-transform: uppercase;
 }
+
 .card-paso1:hover {
     transform: scale(1.05);
     transition: 1s;
-} 
-.card-texto {
-    font-size: 15px!important;
 }
+
+.card-texto {
+    font-size: 15px !important;
+}
+
 .container-bebidas {
     display: flex;
     flex-direction: row;
@@ -72,6 +107,7 @@ html {
     text-align: center;
     justify-content: center;
 }
+
 .estilo-boton {
     margin-top: .75rem;
     font-size: 1.1em;
@@ -79,10 +115,12 @@ html {
     color: $colorTexto;
     text-transform: uppercase;
 }
+
 .estilo-boton:hover {
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
     transition: 0.5s;
 }
+
 .container-comidas {
     display: flex;
     flex-direction: row;
@@ -90,16 +128,21 @@ html {
     flex-wrap: wrap;
     justify-content: center;
 }
-.modal-header{
+
+.modal-header {
     height: 20rem;
     background-size: contain;
 }
+
 .modal-title {
     font-size: 3rem;
     padding-left: 100px;
     padding-top: 70px;
 }
-.btn-rec {font-size: 30px;}
+
+.btn-rec {
+    font-size: 30px;
+}
 
 //CARRITO STYLING
 .cart-overlay {
@@ -113,6 +156,7 @@ html {
     z-index: 2;
     visibility: hidden;
 }
+
 .cart {
     position: fixed;
     top: 0;
@@ -126,28 +170,34 @@ html {
     transition: 1s ease-out;
     transform: translateX(100%);
 }
+
 .showCart {
     transform: translateX(0);
 }
+
 .transparentBcg {
     visibility: visible;
 }
+
 @media only screen and (min-width: 600px) {
     .cart {
         width: 30vh;
         min-width: 450px;
     }
 }
+
 .close-cart {
     font-size: 1.7rem;
     cursor: pointer;
 }
+
 .cart h2 {
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 2px;
     margin-bottom: 2rem;
 }
+
 // cart item
 
 .cart-item {
@@ -157,29 +207,47 @@ html {
     grid-column-gap: 1.5rem;
     margin: 1.5rem 0;
 }
+
 .cart-item img {
     width: 75px;
     height: 75px;
 }
-.cart-item h4 {
-    font-size: .85rem;
+
+.nombre-producto {
+    font-size: 1.6rem;
     text-transform: uppercase;
+    text-align: left;
+    padding-left: 0;
 }
+
+.precio-producto {
+    font-size: 1.4rem;
+}
+
 .cart-item h5 {
     margin: 0.5rem 0;
 }
+
 .item-amount {
     text-align: center;
 }
+
 .remove-item {
     color: grey;
     cursor: pointer;
 }
+
 .fa-chevron-up,
 .fa-chevron-down {
     color: $colorBotones;
     cursor: pointer;
 }
+
+.clear-cart {
+    padding: .5rem;
+    border: none
+}
+
 // cart footer
 
 .cart-footer {
@@ -187,42 +255,120 @@ html {
     letter-spacing: 2px;
     text-align: center;
 }
+
 .cart-footer h3 {
     text-transform: uppercase;
     margin-bottom: 1rem;
 }
+
 .cantidad-form {
     display: flex;
     justify-content: center;
+
 }
+
 .remove-items {
     cursor: pointer;
 }
+
+.boton-cantidad-estilo {
+    margin: 2rem;
+    font-size: 1.1em;
+    background-color: $colorPrimario;
+    color: $colorTexto;
+    text-transform: uppercase;
+}
+
+.cantidadDOMBebida,
+.cantidadDOMComida {
+    height: 50%;
+    margin-top: 2rem;
+    font-size: 20px;
+}
+
 @media only screen and (max-width: 1500px) {
     html {
         font-size: 11px;
     }
-    .container-pasos h4 {
+
+    .pasos-texto {
         font-size: 4rem;
     }
+
     .container-pasos p {
         padding: 0;
         margin-bottom: 0;
     }
+
     .container-bebidas {
         justify-content: center;
         flex-wrap: wrap;
     }
+
     .container-comidas {
         justify-content: center;
     }
+
     .card-paso1 {
         width: 25rem;
         height: 45rem;
     }
+
     .card-title {
         font-size: $fuentetexto-lg;
         padding: $paddingmd;
     }
 
+}
+
+//PASO 3
+.container-confirmacion {
+    display: flex;
+    justify-content: space-around;
+}
+
+.container-form {
+    width: 40rem;
+}
+
+.carrito-contenedor {
+    margin-right: 10rem;
+}
+
+.cart-total {
+    font-size: 2rem;
+}
+
+.btnCarritoComida,
+.btnCarritoBebida,
+.boton-home {
+    margin-top: .75rem;
+    margin-bottom: .5rem;
+    font-size: 1.1em;
+    background-color: $colorClarito;
+    color: $colorTexto;
+    padding: .5rem;
+    text-transform: uppercase;
+    border: none;
+}
+
+.boton-home {
+    font-size: 2.3rem;
+    border-radius: 4px;
+    margin-top: 3rem;
+}
+
+.boton-home:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.totalCarrito {
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .nombre-producto {
+        font-size: 1.5rem !important;
+    }
 }
