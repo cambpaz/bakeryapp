@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QUIENES SOMOS</title>
-    <script src="https://kit.fontawesome.com/b29381595a.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="../scss/estilos.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>QUIENES SOMOS</title>
+	<script src="https://kit.fontawesome.com/b29381595a.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;1,200;1,300;1,400;1,500&family=Lobster&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link rel="stylesheet" href="../scss/estilos.css">
 </head>
+
 <body>
 	<div class="container-foto">
 		<div class="container-fluid container-header">
@@ -16,9 +24,13 @@
 				<div class="col-lg-12 col-md-12 col-sm-12">
 					<header>
 						<div>
-							<h1 class="nombre">YOUR BAKERY</h1>
+							<img id="logo" class="logo" src="../assets/img/CLUB MARTINO.png" alt="">
 						</div>
 						<nav>
+							<input type="checkbox" id="check">
+							<label for="check" class="checkbtn">
+								<i class="fas fa-bars"></i>
+							</label>
 							<ul class="nav-bar">
 								<li class="nav-item">
 									<a href="principal.html" class="nav-link">HOME</a>
@@ -43,16 +55,61 @@
 			<h3>QUIENES SOMOS</h3>
 			<h4>Las manos detras del sabor</h4>
 		</main>
-	</div> 
+	</div>
 	<section class="nuestroEquipo">
-		<p class="textAlign">NUESTRO EQUIPO</p>
+		<p class="textAlign texto-equipo">NUESTRO EQUIPO</p>
 		<div class="contenedor-equipo">
 			<div class="integrante">
-				<img src="" alt="">
+				<div class="img-container efecto">
+					<img class="imagen-integrante" src="../assets/img/integrante1.jpg" alt="">
+				</div>
+				<div class="texto-integrante">
+					<h5>EMILIA</h5>
+				</div>
 			</div>
-			<div class="integrante"></div>
-			<div class="integrante"></div>
+			<div class="integrante row-reverse">
+				<div class="img-container efecto1">
+					<img class="imagen-integrante" src="../assets/img/panadero1.jpeg" alt="">
+				</div>
+				<div class="texto-integrante">
+					<h5>JUAN</h5>
+				</div>
+			</div>
+			<div class="integrante">
+				<div class="img-container efecto2">
+					<img class="imagen-integrante" src="../assets/img/panadero2.jpg" alt="">
+				</div>
+				<div class="texto-integrante">
+					<h5>MARTIN</h5>
+				</div>
+			</div>
 		</div>
 	</section>
+	<section class="detrasDeEscena">
+		<div class="img-bg">
+			<p class="texto-detrasDeEscena">DETRAS DE ESCENA</p>
+		</div>
+		<p class="textAlign tour">¡MIRA EL TOUR POR NUESTRAS INSTALACIONES!</p>
+		<div class="contenedor-video">
+			<iframe width="860" height="515" src="https://www.youtube.com/embed/5GBo6NEiIFE"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen></iframe>
+		</div>
+	</section>
+	<footer>
+		<div class="redes-sociales">
+			<p>¡SEGUINOS EN NUESTRAS REDES SOCIALES!</p>
+			<i class="fab fa-facebook icono"></i>
+			<i class="fab fa-instagram icono"></i>
+		</div>
+		<div>
+			<img class="logo-footer" src="../assets/img/CLUB MARTINO.png" alt="">
+		</div>
+		<div>
+			<img class="mifirma" src="../assets/img/mifirma.png" alt="">
+		</div>
+	</footer>
 </body>
+
 </html>

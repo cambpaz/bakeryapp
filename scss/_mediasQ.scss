@@ -1,0 +1,124 @@
+@import "estandar";
+
+@media only screen and (max-width: 900px) {
+
+}
+
+@media only screen and (max-width: 850px) {
+//MENU TOGGLE    
+    header {
+        display: block;
+    }
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        right: -100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $colorClarito;
+        transition: all .5s;
+        z-index: 1;
+    }
+    .checkbtn {
+        display: block;
+        position: absolute;
+        top: 5%;
+        right: 3%;
+        color: black;
+        float: right;
+        line-height: 80px;
+        margin: 2.5rem;
+        cursor: pointer;
+        z-index: 2;
+    }
+    #check:checked ~ ul {
+        right: 0;
+    }
+    .fa-bars {
+        font-size: 3.125rem;
+    }
+    #check {
+        display: none;
+    }
+    // INTRO ANIMACION
+    .intro {
+        z-index: 7;
+    }
+    .intro-text {
+        margin: 3rem;
+    }
+    // PAGINA HOME
+    .landing {
+        background-image: linear-gradient(rgba(243, 211, 169, 0.714),rgba(214, 196, 172, 0.714)), url(../assets/img/portada-nosotros1.jpg);
+        padding: 0;
+        background-position: center;
+    }
+    .texto-principal {
+        margin-bottom: 3rem;
+    }
+    .texto-secundario {
+        font-size: 2.5rem;
+        font-weight: 400;
+    }
+    .boton-home {
+        font-size: 3rem;
+        background-color: $colorMarroncito;
+        padding: .8rem 1rem;
+    }
+    // ARMA TU DESAYUNO
+    .container-imagen {
+        background-image: linear-gradient(rgba(243, 211, 169, 0.614), rgba(214, 196, 172, 0.514)), url(../assets/img/fondo-desayuno-mb.jpg);
+        background-position: right;
+    }
+    .container-portada h2 {
+        font-weight: 400;
+        font-size: 4rem;
+    }
+    .container-nosotros h4 {
+        font-weight: 400;
+    }
+    .texto-pedido {
+        font-weight: 300;
+        font-size: 2.5rem;
+        margin: 2rem 0;
+    }
+    .numeroDeItems {
+        font-size: 1rem;
+    }
+    .card-title {
+        font-weight: 400;
+    }
+    .container-confirmacion {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .container-form {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cart {
+        z-index: 4;
+        width: 100%;
+    }
+    // PAGINA NOSOTROS
+    .imagen-integrante {
+        margin-right: 0;
+    }
+    .imagen-integrante::after {
+        margin-right: 0;
+    }
+    //FOOTER 
+    footer {
+        flex-direction: column;
+        height: auto;
+    }
+    .mifirma {
+        display: none;
+    }
+}

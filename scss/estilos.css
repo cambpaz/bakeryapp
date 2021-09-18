@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0px;
   padding: 0px;
@@ -26,6 +27,14 @@
 .container-header {
   background-color: none;
   height: 10vh;
+}
+
+#check {
+  display: none;
+}
+
+.checkbtn {
+  display: none;
 }
 
 header {
@@ -116,6 +125,7 @@ nav ul li .active {
 }
 
 .btnAbrirCarrito {
+  background-color: #E5D1B8;
   border-radius: 50%;
   border: 1px solid black;
   position: fixed;
@@ -205,7 +215,7 @@ html {
   padding: 0.5em;
 }
 
-.container-portada h3 {
+.texto-pedido {
   max-width: 95%;
   font-size: 3rem;
 }
@@ -539,6 +549,10 @@ html {
   padding: .5rem;
   text-transform: uppercase;
   border: none;
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
 }
 
 .boton-home {
@@ -618,8 +632,8 @@ html {
 }
 
 .container-foto {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(243, 211, 169, 0.614)), to(rgba(214, 196, 172, 0.514))), url(../assets/img/portada-nosotros1.jpg);
-  background-image: linear-gradient(rgba(243, 211, 169, 0.614), rgba(214, 196, 172, 0.514)), url(../assets/img/portada-nosotros1.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(243, 211, 169, 0.514)), to(rgba(214, 196, 172, 0.514))), url(../assets/img/portada-nosotros.jpg);
+  background-image: linear-gradient(rgba(243, 211, 169, 0.514), rgba(214, 196, 172, 0.514)), url(../assets/img/portada-nosotros.jpg);
   background-size: cover;
   height: 100vh;
 }
@@ -629,6 +643,10 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -636,13 +654,33 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   height: 80vh;
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 400;
 }
 
 .container-nosotros h3 {
   font-size: 5rem;
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 400;
 }
 
-.nosotros-flex {
+.container-nosotros h4 {
+  font-size: 2.5rem;
+  padding: 0.5em;
+  letter-spacing: 3px;
+}
+
+.texto-equipo {
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  padding: 0.5em;
+}
+
+.textAlign {
+  text-align: center;
+}
+
+.contenedor-equipo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -650,51 +688,247 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.nosotros-text p {
+.integrante {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.img-container {
+  width: 25rem;
+  height: auto;
+  position: relative;
+}
+
+.imagen-integrante {
+  margin: 1rem 6rem;
+  width: 25rem;
+  height: auto;
+  border-radius: 4px;
+}
+
+.texto-integrante {
+  margin: 1rem 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25rem;
+}
+
+.texto-integrante h5 {
   font-size: 2.5rem;
-  padding: 3em;
+  text-align: left;
+  letter-spacing: 2px;
 }
 
-.imagen-panadero img {
-  margin: 2.5rem;
+.efecto::after {
+  content: 'FUNDADORA & CEO';
+  color: white;
+  font-size: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: black;
+  margin: 1rem 6rem;
+  width: 100%;
+  height: 20.75rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 
-.textAlign {
+.efecto:hover::after {
+  opacity: 0.6;
+}
+
+.efecto1::after {
+  content: 'BAKER & CO-FOUNDER';
+  color: white;
+  font-size: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: black;
+  margin: 1rem 6rem;
+  width: 100%;
+  height: 20.75rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+.efecto1:hover::after {
+  opacity: 0.6;
+}
+
+.efecto2::after {
+  content: 'COOK & SALES MANAGER';
+  color: white;
+  font-size: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: black;
+  margin: 1rem 6rem;
+  width: 100%;
+  height: 20.75rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+.efecto2:hover::after {
+  opacity: 0.6;
+}
+
+.img-bg {
+  background-attachment: fixed;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(243, 211, 169, 0.614)), to(rgba(214, 196, 172, 0.514))), url(../assets/img/detrasDeEscena.jpg);
+  background-image: linear-gradient(rgba(243, 211, 169, 0.614), rgba(214, 196, 172, 0.514)), url(../assets/img/detrasDeEscena.jpg);
+  min-height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.texto-detrasDeEscena {
+  font-size: 4rem;
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 500;
+  letter-spacing: 4px;
   text-align: center;
 }
 
-.texto-quienessomos {
-  position: relative;
-  display: inline-block;
+.contenedor-video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 3rem;
+}
+
+.tour {
   font-size: 2.5rem;
+  padding: 1.5rem;
 }
 
-.texto-quienessomos::before, .texto-quienessomos::after {
-  content: '';
-  display: inline-block;
-  margin: 25px;
-  position: absolute;
-  background: black;
+footer {
+  height: 20vh;
+  background-color: #E5D1B8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.texto-quienessomos::before {
-  background: white;
-  width: 100%;
-  z-index: -1;
-  height: 100%;
+.redes-sociales {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.texto-quienessomos::after {
-  height: 5%;
-  width: 90vw;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  bottom: 0;
-  top: 0;
-  z-index: -2;
+.redes-sociales p {
+  font-size: 1.4rem;
+  padding: 1em;
+  padding-bottom: 0;
+  font-weight: 300;
+}
+
+.icono {
+  font-size: 2rem;
+  margin: .5rem;
+  margin-left: 2rem;
+}
+
+.logo-footer {
+  width: 20rem;
+  margin-right: 10rem;
+}
+
+.mifirma {
+  width: 13rem;
+  margin-right: 2.5rem;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+.mifirma:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 #logo {
@@ -769,5 +1003,149 @@ html {
 .texto-principal {
   font-family: 'IBM Plex Serif', serif;
   font-weight: 400;
+}
+
+.boton-home:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+@media only screen and (max-width: 850px) {
+  header {
+    display: block;
+  }
+  .nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    right: -100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #E5D1B8;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    z-index: 1;
+  }
+  .checkbtn {
+    display: block;
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    color: black;
+    float: right;
+    line-height: 80px;
+    margin: 2.5rem;
+    cursor: pointer;
+    z-index: 2;
+  }
+  #check:checked ~ ul {
+    right: 0;
+  }
+  .fa-bars {
+    font-size: 3.125rem;
+  }
+  #check {
+    display: none;
+  }
+  .intro {
+    z-index: 7;
+  }
+  .intro-text {
+    margin: 3rem;
+  }
+  .landing {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(243, 211, 169, 0.714)), to(rgba(214, 196, 172, 0.714))), url(../assets/img/portada-nosotros1.jpg);
+    background-image: linear-gradient(rgba(243, 211, 169, 0.714), rgba(214, 196, 172, 0.714)), url(../assets/img/portada-nosotros1.jpg);
+    padding: 0;
+    background-position: center;
+  }
+  .texto-principal {
+    margin-bottom: 3rem;
+  }
+  .texto-secundario {
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+  .boton-home {
+    font-size: 3rem;
+    background-color: #C2956E;
+    padding: .8rem 1rem;
+  }
+  .container-imagen {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(243, 211, 169, 0.614)), to(rgba(214, 196, 172, 0.514))), url(../assets/img/fondo-desayuno-mb.jpg);
+    background-image: linear-gradient(rgba(243, 211, 169, 0.614), rgba(214, 196, 172, 0.514)), url(../assets/img/fondo-desayuno-mb.jpg);
+    background-position: right;
+  }
+  .container-portada h2 {
+    font-weight: 400;
+    font-size: 4rem;
+  }
+  .container-nosotros h4 {
+    font-weight: 400;
+  }
+  .texto-pedido {
+    font-weight: 300;
+    font-size: 2.5rem;
+    margin: 2rem 0;
+  }
+  .numeroDeItems {
+    font-size: 1rem;
+  }
+  .card-title {
+    font-weight: 400;
+  }
+  .container-confirmacion {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container-form {
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .cart {
+    z-index: 4;
+    width: 100%;
+  }
+  .imagen-integrante {
+    margin-right: 0;
+  }
+  .imagen-integrante::after {
+    margin-right: 0;
+  }
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+  .mifirma {
+    display: none;
+  }
 }
 /*# sourceMappingURL=estilos.css.map */

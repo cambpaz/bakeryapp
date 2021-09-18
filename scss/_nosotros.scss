@@ -1,63 +1,223 @@
 @import "estandar";
 
 .container-foto {
-    background-image: linear-gradient(rgba(243, 211, 169, 0.614),rgba(214, 196, 172, 0.514)), url(../assets/img/portada-nosotros1.jpg);
+    background-image: linear-gradient(rgba(243, 211, 169, 0.514), rgba(214, 196, 172, 0.514)), url(../assets/img/portada-nosotros.jpg);
     background-size: cover;
     height: 100vh;
 }
+
 .container-nosotros {
     text-align: center;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 80vh;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
 }
+
 .container-nosotros h3 {
     font-size: $fuentetitulo;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 400;
 }
-.nosotros-flex {
-    display: flex;
-    flex-direction: row;
-}
-.nosotros-text p{
+
+.container-nosotros h4 {
     font-size: $fuentetexto-lg;
-    padding: 3em;
+    padding: $paddingmd;
+    letter-spacing: 3px;
 }
-.imagen-panadero img{
-    margin: 2.5rem;
+
+.texto-equipo {
+    font-size: $fuentetexto-lg;
+    letter-spacing: 3px;
+    padding: $paddingmd;
 }
+
 .textAlign {
     text-align: center;
 }
-.texto-quienessomos {
-    position: relative;
-    display: inline-block;
-    font-size: $fuentetexto-lg;
-    
-    &::before,
-    &::after {
-        content: '';
-        display: inline-block;
-        margin: 25px;
-        position: absolute;
-        background: black;
-    }
-    &::before {
-        background: white;
-        width: 100%;
-        z-index: -1;        
-        height: 100%;
-    }
-    &::after {
-        height: 5%;
-        width: 90vw;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 0;
-        top: 0;
-        z-index: -2;
-    }
+
+.contenedor-equipo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
+.integrante {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.img-container {
+    width: 25rem;
+    height: auto;
+    position: relative;
+}
 
+.imagen-integrante {
+    margin: 1rem 6rem;
+    width: 25rem;
+    height: auto;
+    border-radius: 4px;
+}
+
+.texto-integrante {
+    margin: 1rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25rem;
+}
+
+.texto-integrante h5 {
+    font-size: $fuentetexto-lg;
+    text-align: left;
+    letter-spacing: 2px;
+}
+
+//EFECTO IMAGENES
+.efecto::after {
+    content: 'FUNDADORA & CEO';
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    margin: 1rem 6rem;
+    width: 100%;
+    height: 20.75rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.efecto:hover::after {
+    opacity: 0.6;
+}
+
+.efecto1::after {
+    content: 'BAKER & CO-FOUNDER';
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    margin: 1rem 6rem;
+    width: 100%;
+    height: 20.75rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.efecto1:hover::after {
+    opacity: 0.6;
+}
+
+.efecto2::after {
+    content: 'COOK & SALES MANAGER';
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    margin: 1rem 6rem;
+    width: 100%;
+    height: 20.75rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.efecto2:hover::after {
+    opacity: 0.6;
+}
+
+//fin efecto
+
+.img-bg {
+    background-attachment: fixed;
+    background-image: linear-gradient(rgba(243, 211, 169, 0.614), rgba(214, 196, 172, 0.514)), url(../assets/img/detrasDeEscena.jpg);
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto-detrasDeEscena {
+    font-size: 4rem;
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.contenedor-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem;
+}
+
+.tour {
+    font-size: $fuentetexto-lg;
+    padding: 1.5rem;
+}
+
+//FOOTER
+
+footer {
+    height: 20vh;
+    background-color: $colorClarito;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.redes-sociales {
+    display: flex;
+    flex-direction: column;
+}
+
+.redes-sociales p {
+    font-size: $fuentetexto-md;
+    padding: $paddinglg;
+    padding-bottom: 0;
+    font-weight: 300;
+}
+
+.icono {
+    font-size: 2rem;
+    margin: .5rem;
+    margin-left: 2rem;
+}
+
+.logo-footer {
+    width: 20rem;
+    margin-right: 10rem;
+}
+
+.mifirma {
+    width: 13rem;
+    margin-right: 2.5rem;
+    transition: 1s ease;
+}
+
+.mifirma:hover {
+    transform: scale(1.1);
+}

@@ -47,7 +47,7 @@ html {
     padding: $paddingmd;
 }
 
-.container-portada h3 {
+.texto-pedido{
     max-width: 95%;
     font-size: $fuentesubtitulo;
 }
@@ -353,6 +353,7 @@ html {
     padding: .5rem;
     text-transform: uppercase;
     border: none;
+    transition: transform 1s ease;
 }
 
 .boton-home {

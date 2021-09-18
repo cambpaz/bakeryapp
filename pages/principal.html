@@ -18,16 +18,19 @@
     <link rel="stylesheet" href="../scss/estilos.css">
 </head>
 <body>
-    <main>
         <div class="landing">
             <div class="container-fluid container-header">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <header>
-                            <div>
+                            <!-- <div> -->
                                 <img id="logo" src="../assets/img/CLUB MARTINO.png" alt="">
-                            </div>
+                            <!-- </div> -->
                             <nav>
+                                <input type="checkbox" id="check">
+							<label for="check" class="checkbtn">
+								<i class="fas fa-bars"></i>
+							</label>
                                 <ul class="nav-bar">
                                     <li class="nav-item">
                                         <a href="" class="nav-link active">HOME</a>
@@ -35,12 +38,12 @@
                                     <li class="nav-item">
                                         <a href="../index.html" class="nav-link">ARMA TU DESAYUNO</a>
                                     </li>
-                                    <!-- <li class="nav-item">
+                                    <li class="nav-item">
                                         <a href="nosotros.html" class="nav-link">QUIENES SOMOS</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="" class="nav-link">CONTACTO</a>
-                                    </li> -->
+                                    </li>
                                 </ul>
                             </nav>
                         </header>
@@ -49,15 +52,12 @@
             </div>
             <main>
                 <div class="container-portada">
-                    <p id="saludo"></p>
-                    <p id="bienvenida"></p>
                     <h2 class="texto-principal">El sabor de lo casero.</h2>
-                    <h3>A UN CLICK DE DISTANCIA</h3>
+                    <h3 class="texto-secundario">A UN CLICK DE DISTANCIA</h3>
                     <a href="../index.html" class="boton-home">PEDI TU DESAYUNO</a>
                 </div>
             </main>   
         </div>
-    </main>
     <div class="intro">
         <div class="intro-text">
             <h1 class="hide">
@@ -72,7 +72,19 @@
         </div>
     </div>
     <div class="slider"></div>
-    
+    <footer>
+		<div class="redes-sociales">
+			<p>¡SEGUINOS EN NUESTRAS REDES SOCIALES!</p>
+			<i class="fab fa-facebook icono"></i>
+			<i class="fab fa-instagram icono"></i>
+		</div>
+		<div>
+			<img class="logo-footer" src="../assets/img/CLUB MARTINO.png" alt="">
+		</div>
+		<div>
+			<img class="mifirma" src="../assets/img/mifirma.png" alt="">
+		</div>
+	</footer>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
         integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="

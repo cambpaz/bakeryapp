@@ -17,6 +17,12 @@
     background-color: none;
     height: 10vh;
 }
+#check {
+    display: none;
+}
+.checkbtn {
+    display: none;
+}
 header {
     display: flex;
     justify-content: space-between;
@@ -76,6 +82,7 @@ nav ul li .active {
     transform: scale(1.2);
 }
 .btnAbrirCarrito {
+    background-color: $colorClarito;
     border-radius: 50%; 
     border: 1px solid black;
     position: fixed; 
