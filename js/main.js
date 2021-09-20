@@ -14,14 +14,16 @@ $(document).ready(
 				}
 			}
 		}
+		
 		bebidasUI(bebidas),
-			modalBebidaUI(bebidas)
+		modalBebidaUI(bebidas),
 		comidasUI(comidas),
-			modalComidasUI(comidas),
-			carrito = LocalStorage.recuperarCarrito(),
-			valoresDelCarrito(carrito),
-			carrito.forEach(producto => mostrarItemsCarrito(producto)),
-			LocalStorage.guardarBebida(bebidas),
-			LocalStorage.guardarComida(comidas)
+		modalComidasUI(comidas),
+		carrito = LocalStorage.recuperarCarrito(),
+		valoresDelCarrito(carrito),
+		carrito.forEach(producto => mostrarItemsCarrito(producto)),
+		LocalStorage.guardarBebida(bebidas),
+		LocalStorage.guardarComida(comidas),
+		display(carrito)
 	}),
 )

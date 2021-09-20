@@ -8,7 +8,7 @@
     min-height: 100vh;
     background-image: linear-gradient(rgba(243, 211, 169, 0.614),rgba(214, 196, 172, 0.514)), url(../assets/img/portada-nosotros1.jpg);
     background-size: cover;
-    padding: 0rem 5rem;
+    padding: 0rem 2rem;
 }
 
 .big-text {
@@ -56,6 +56,9 @@
     font-family: 'IBM Plex Serif', serif;
     font-weight: 400;
     // font-style: italic;
+}
+.texto-secundario {
+    font-size: $fuentetexto-lg;
 }
 .boton-home:hover {
     transform: scale(1.1);

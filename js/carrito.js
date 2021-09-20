@@ -62,6 +62,7 @@ function comprarBebida(e) {
 				productoEntro = true;
 				item.cantidad += cantidadAgregadaBebida;
 				$(".mensaje-agregado").fadeIn(1000).delay(1000).fadeOut(2000)
+				$(".display-carritoVacio").hide()
 			}
 		}
 		//si el carrito no esta en el carrito, lo agrega
@@ -69,6 +70,7 @@ function comprarBebida(e) {
 			carrito = [...carrito, itemCarro];
 			itemCarro.cantidad += cantidadAgregadaBebida;
 			$(".mensaje-agregado").fadeIn(1000).delay(1000).fadeOut(2000)
+			$(".display-carritoVacio").hide()
 		}
 		mostrarItemsCarrito();
 		//lo guardo en el local storage
@@ -116,6 +118,19 @@ function eliminarUnoBebida() {
 		$(".cantidadDOMBebida").text(0);
 	}
 }
+function display(carrito){
+if (carrito.length === 0) {
+		$(".contenedor-total-carrito").hide();
+		$(".clear-cart").hide()
+		console.log("entro al if del display");
+	}
+	else if (carrito.length !== 0) {
+		$(".display-carritoVacio").hide();
+		$(".clear-cart").show()
+		console.log("entro al else");
+	}
+}
+
 $(".mensaje-agregado").hide()
 function comprarComida(e) {
 	e.preventDefault();
@@ -133,6 +148,9 @@ function comprarComida(e) {
 				productoEntro = true;
 				item.cantidad += cantidadAgregadaComida;
 				$(".mensaje-agregado").fadeIn(1000).delay(1000).fadeOut(2000)
+				$(".contenedor-total-carrito").show()
+				$(".display-carritoVacio").hide()
+				$(".clear-cart").show()
 			}
 		}
 		//si el carrito no esta en el carrito, lo agrega
@@ -140,6 +158,9 @@ function comprarComida(e) {
 			carrito = [...carrito, itemCarro];
 			itemCarro.cantidad += cantidadAgregadaComida;
 			$(".mensaje-agregado").fadeIn(1000).delay(1000).fadeOut(2000)
+			$(".contenedor-total-carrito").show()
+			$(".display-carritoVacio").hide()
+			$(".clear-cart").show()
 		}
 		mostrarItemsCarrito();
 		//lo guardo en el local storage
@@ -149,6 +170,7 @@ function comprarComida(e) {
 		//mostrar los items en el carrito
 		$(".cantidadDOMComida").text(0)
 		cantidadAgregadaComida = 0;
+		console.log(carrito.length);
 	}
 }
 
@@ -195,7 +217,9 @@ function vaciarCarrito() {
 	$(".cart-total").text(0);
 	$(".numeroDeItems").text(0);
 	carrito = [];
-
+	$(".contenedor-total-carrito").hide()
+	$(".display-carritoVacio").show();
+	$(".clear-cart").hide()
 	localStorage.setItem("Carrito", JSON.stringify(carrito))
 }
 $(".clear-cart").click(vaciarCarrito);
@@ -204,13 +228,14 @@ $(".clear-cart").click(vaciarCarrito);
 
 function eliminarUnidad(e) {
 	let posicion = carrito.findIndex(producto => producto.id == e.target.id);
-	console.log(posicion);
 	//Utilizo el splice para que me elimine el producto del carrito (metodo splice, busco la posicion con el findIndex y elimino uno para adelante desde ahi)
 	carrito.splice(posicion, 1);
 	$(".numeroDeItems").text(0);
 	valoresDelCarrito(carrito)
 	mostrarItemsCarrito()
 	localStorage.setItem("Carrito", JSON.stringify(carrito));
+	$(".contenedor-total-carrito").hide()
+	$(".display-carritoVacio").show();
 }
 
 //BOTONES PARA ABRIR Y CERRAR EL CARRITO
@@ -241,7 +266,6 @@ function agregarUnidadDesdeCarrito(e) {
 	mostrarItemsCarrito(carrito);
 	valoresDelCarrito(carrito);
 	localStorage.setItem("Carrito", JSON.stringify(carrito))
-
 }
 
 

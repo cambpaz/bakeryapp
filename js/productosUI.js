@@ -19,10 +19,12 @@ function modalBebidaUI(bebidas) {
 				<div class="modal-dialog">
 					<div class="modal-content modal-lg">
 						<div style="background-image: linear-gradient(rgba(241, 234, 224, 0.614),rgba(241, 234, 224, 0.614)), url(assets/img/${bebida.id}.jpg);" class="modal-header">
+							<div style="display:flex; justify-content: center; align-items: center;">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
 							<h5 class="modal-title" id="exampleModalLabel">${bebida.nombre}</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
 						</div>
 						<div class="modal-body">
 							<p>Elija la cantidad de unidades que quiere ordenar</p>
@@ -33,7 +35,7 @@ function modalBebidaUI(bebidas) {
 							</form>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<button type="button" class="boton-cerrar-modal" data-dismiss="modal">CERRAR</button>
 							<button value="submit" type="button" data-dismiss="modal" id="${bebida.boton}" class="btnCarritoBebida">Agregar al carrito</button>
 						</div>
 					</div>
@@ -78,7 +80,7 @@ function modalComidasUI (comidas){
 					</form>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="boton-cerrar-modal" data-dismiss="modal">CERRAR</button>
 						<button value="submit" type="button" data-dismiss="modal" id="${comida.boton}" class="btnCarritoComida">Agregar al carrito</button>
 					</div>
 				</div>

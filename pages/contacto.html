@@ -1,12 +1,179 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<title>CONTACTO</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/b29381595a.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="../scss/css-contacto/style.css">
+    <link rel="stylesheet" href="../scss/estilos.css">
 </head>
+
 <body>
-    
+    <div class="container-foto-contacto">
+        <div class="container-header">
+            <header>
+                <img id="logo" src="../assets/img/CLUB MARTINO.png" alt="">
+                <nav>
+                    <input type="checkbox" id="check">
+                    <label for="check" class="checkbtn">
+                        <i class="fas fa-bars"></i>
+                    </label>
+                    <ul class="nav-bar">
+                        <li class="nav-item">
+                            <a href="principal.html" class="nav-link active">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link">ARMA TU DESAYUNO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="nosotros.html" class="nav-link">QUIENES SOMOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contacto.html" class="nav-link">CONTACTO</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <main>
+            <div class="portada-contacto">
+                <h2 class="texto-principal">CONTACTO</h2>
+            </div>
+        </main>
+    </div>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">¡CONTACTANOS!</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<div class="wrapper">
+						<div class="row mb-5">
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="fa fa-map-marker"></span>
+									</div>
+									<div class="text">
+										<p><span>Direccion:</span> Av. Sante Fe 1234, Buenos Aires</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="fa fa-phone"></span>
+									</div>
+									<div class="text">
+										<p><span>Telefono:</span> <a href="tel://1234567920">+ 1234 56789</a></p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="fa fa-paper-plane"></span>
+									</div>
+									<div class="text">
+										<p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+									<div class="icon d-flex align-items-center justify-content-center">
+										<span class="fa fa-globe"></span>
+									</div>
+									<div class="text">
+										<p><span>Sitio Web:</span> <a href="#">yoursite.com</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row no-gutters">
+							<div class="col-md-7">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+									<h3 class="mb-4">¿Tenes alguna consulta?</h3>
+									<div id="form-message-warning" class="mb-4"></div>
+									<div id="form-message-success" class="mb-4">
+										¡Su mensaje ha sido enviado con éxito!
+									</div>
+									<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="label" for="name">Nombre Completo</label>
+													<input type="text" class="form-control" name="name" id="name"
+														placeholder="Juan" required>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="label" for="email">Email</label>
+													<input type="email" class="form-control" name="email" id="email"
+														placeholder="Email@me.com" required>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="subject">Asunto</label>
+													<input type="text" class="form-control" name="subject" id="subject"
+														placeholder="Asunto del mensaje" required>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="#">Mensaje</label>
+													<textarea name="message" class="form-control" id="message" cols="30"
+														rows="4" placeholder="Escriba aqui su mensaje..." required></textarea>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="submit" value="ENVIAR" class="btn btn-primary">
+													<div class="submitting"></div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="col-md-5 d-flex align-items-stretch">
+								<div class="info-wrap w-100 p-5 img" style="background-image: url(../assets/img/imagen-contacto.jpg);">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    <footer>
+		<div class="redes-sociales">
+			<p>¡SEGUINOS EN NUESTRAS REDES SOCIALES!</p>
+            <div class="contenedor-rrss">
+                <a target="_blank" href="https://www.facebook.com/"><i class="fab fa-facebook icono"></i></a>
+				<a target="_blank" href="https://www.instagram.com/?hl=es"><i class="fab fa-instagram icono"></i></a>
+            </div>
+		</div>
+		<div>
+			<a href="principal.html"><img class="logo-footer" src="../assets/img/CLUB MARTINO.png" alt=""></a>
+		</div>
+		<div>
+			<a target="_blank" href="https://www.linkedin.com/in/camilapaz-frontend/"><img class="mifirma" src="../assets/img/mifirma.png" alt=""></a>
+		</div>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../js/contact-form/formulario-contacto.js"></script>
 </body>
+
 </html>

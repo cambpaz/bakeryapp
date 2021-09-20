@@ -199,17 +199,21 @@ footer {
     padding: $paddinglg;
     padding-bottom: 0;
     font-weight: 300;
+    color: black;
 }
-
+.contenedor-rrss {
+    display: flex;
+    justify-content: center;
+}
 .icono {
     font-size: 2rem;
     margin: .5rem;
-    margin-left: 2rem;
+    color: black;
 }
 
 .logo-footer {
     width: 20rem;
-    margin-right: 10rem;
+    margin-right: 2rem;
 }
 
 .mifirma {

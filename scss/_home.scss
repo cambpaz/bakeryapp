@@ -8,6 +8,7 @@ html {
     background-image: linear-gradient(rgba(243, 211, 169, 0.614), rgba(214, 196, 172, 0.514)), url(../assets/img/fondo-desayuno.jpg);
     background-size: cover;
     height: 100vh;
+    padding: 0rem 2rem;
 }
 
 .mensaje-agregado {
@@ -50,6 +51,7 @@ html {
 .texto-pedido{
     max-width: 95%;
     font-size: $fuentesubtitulo;
+    font-weight: 400;
 }
 
 .flecha {
@@ -89,6 +91,7 @@ html {
 
 .card-title {
     text-transform: uppercase;
+    font-weight: 400;
 }
 
 .card-paso1:hover {
@@ -130,13 +133,14 @@ html {
 }
 
 .modal-header {
+    display: block;
     height: 20rem;
     background-size: contain;
 }
 
 .modal-title {
     font-size: 3rem;
-    padding-left: 100px;
+    text-align: center;
     padding-top: 70px;
 }
 
@@ -247,7 +251,10 @@ html {
     padding: .5rem;
     border: none
 }
-
+.empty-cart-png {
+    width: 13rem;
+    margin-top: 3rem;
+}
 // cart footer
 
 .cart-footer {
@@ -286,9 +293,9 @@ html {
     font-size: 20px;
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1450px) {
     html {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .pasos-texto {
@@ -336,6 +343,7 @@ html {
 }
 .carrito-contenedor {
     margin-right: 10rem;
+    margin-top: 2.5rem;
 }
 
 .cart-total {
@@ -350,7 +358,7 @@ html {
     font-size: 1.1em;
     background-color: $colorClarito;
     color: $colorTexto;
-    padding: .5rem;
+    padding: .5rem .8rem;
     text-transform: uppercase;
     border: none;
     transition: transform 1s ease;
@@ -420,4 +428,15 @@ html {
 }
 #overlay.active{
     display: block;
+}
+.boton-cerrar-modal {
+    margin-top: .75rem;
+    margin-bottom: .5rem;
+    font-size: 1.1em;
+    background-color: #cfe3e9;
+    color: $colorTexto;
+    padding: .5rem .8rem;
+    text-transform: uppercase;
+    border: none;
+    transition: transform 1s ease;
 }

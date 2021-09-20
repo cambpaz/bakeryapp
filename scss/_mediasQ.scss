@@ -1,11 +1,11 @@
 @import "estandar";
 
-@media only screen and (max-width: 900px) {
-
+@media only screen and (max-width: 1500px) {
+    .numeroDeItems {
+        font-size: 1rem;
+    }
 }
-
-@media only screen and (max-width: 850px) {
-//MENU TOGGLE    
+@media only screen and (max-width: 950px) {
     header {
         display: block;
     }
@@ -25,12 +25,12 @@
     .checkbtn {
         display: block;
         position: absolute;
-        top: 5%;
+        top: 1rem;
         right: 3%;
         color: black;
         float: right;
         line-height: 80px;
-        margin: 2.5rem;
+        margin: .5rem;
         cursor: pointer;
         z-index: 2;
     }
@@ -43,6 +43,9 @@
     #check {
         display: none;
     }
+}
+@media only screen and (max-width: 850px) {
+
     // INTRO ANIMACION
     .intro {
         z-index: 7;
@@ -51,6 +54,9 @@
         margin: 3rem;
     }
     // PAGINA HOME
+    .nav-links {
+        font-size: 2.2rem;
+    }
     .landing {
         background-image: linear-gradient(rgba(243, 211, 169, 0.714),rgba(214, 196, 172, 0.714)), url(../assets/img/portada-nosotros1.jpg);
         padding: 0;
@@ -106,6 +112,9 @@
         z-index: 4;
         width: 100%;
     }
+    .carrito-contenedor {
+        margin: 0;
+    }
     // PAGINA NOSOTROS
     .imagen-integrante {
         margin-right: 0;
@@ -120,5 +129,10 @@
     }
     .mifirma {
         display: none;
+    }
+    .logo-footer {
+        margin: 0;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
     }
 }

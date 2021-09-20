@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0px;
   padding: 0px;
@@ -154,6 +155,49 @@ nav ul li .active {
   border-radius: 30%;
 }
 
+.container-foto-contacto {
+  min-height: 100vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(243, 211, 169, 0.614)), to(rgba(214, 196, 172, 0.514))), url(../assets/img/fondo-contacto.jpg);
+  background-image: linear-gradient(rgba(243, 211, 169, 0.614), rgba(214, 196, 172, 0.514)), url(../assets/img/fondo-contacto.jpg);
+  background-size: cover;
+  padding: 0rem 2rem;
+}
+
+.portada-contacto {
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.portada-contacto h3 {
+  color: black;
+  font-size: 6rem;
+  font-family: 'IBM Plex Serif', serif;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+
+.portada-contacto h2 {
+  font-size: 6rem;
+  letter-spacing: 4px;
+}
+
+.formContacto {
+  font-family: "Oswald", sans-serif;
+}
+
 html {
   font-size: 16px;
 }
@@ -163,6 +207,7 @@ html {
   background-image: linear-gradient(rgba(243, 211, 169, 0.614), rgba(214, 196, 172, 0.514)), url(../assets/img/fondo-desayuno.jpg);
   background-size: cover;
   height: 100vh;
+  padding: 0rem 2rem;
 }
 
 .mensaje-agregado {
@@ -217,7 +262,8 @@ html {
 
 .texto-pedido {
   max-width: 95%;
-  font-size: 3rem;
+  font-size: 2.2rem;
+  font-weight: 400;
 }
 
 .flecha {
@@ -257,6 +303,7 @@ html {
 
 .card-title {
   text-transform: uppercase;
+  font-weight: 400;
 }
 
 .card-paso1:hover {
@@ -318,13 +365,14 @@ html {
 }
 
 .modal-header {
+  display: block;
   height: 20rem;
   background-size: contain;
 }
 
 .modal-title {
   font-size: 3rem;
-  padding-left: 100px;
+  text-align: center;
   padding-top: 70px;
 }
 
@@ -441,6 +489,11 @@ html {
   border: none;
 }
 
+.empty-cart-png {
+  width: 13rem;
+  margin-top: 3rem;
+}
+
 .cart-footer {
   margin-top: 2rem;
   letter-spacing: 2px;
@@ -480,9 +533,9 @@ html {
   font-size: 20px;
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1450px) {
   html {
-    font-size: 11px;
+    font-size: 12px;
   }
   .pasos-texto {
     font-size: 4rem;
@@ -532,6 +585,7 @@ html {
 
 .carrito-contenedor {
   margin-right: 10rem;
+  margin-top: 2.5rem;
 }
 
 .cart-total {
@@ -546,7 +600,7 @@ html {
   font-size: 1.1em;
   background-color: #E5D1B8;
   color: #2B2129;
-  padding: .5rem;
+  padding: .5rem .8rem;
   text-transform: uppercase;
   border: none;
   -webkit-transition: -webkit-transform 1s ease;
@@ -629,6 +683,21 @@ html {
 
 #overlay.active {
   display: block;
+}
+
+.boton-cerrar-modal {
+  margin-top: .75rem;
+  margin-bottom: .5rem;
+  font-size: 1.1em;
+  background-color: #cfe3e9;
+  color: #2B2129;
+  padding: .5rem .8rem;
+  text-transform: uppercase;
+  border: none;
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
 }
 
 .container-foto {
@@ -906,17 +975,27 @@ footer {
   padding: 1em;
   padding-bottom: 0;
   font-weight: 300;
+  color: black;
+}
+
+.contenedor-rrss {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .icono {
   font-size: 2rem;
   margin: .5rem;
-  margin-left: 2rem;
+  color: black;
 }
 
 .logo-footer {
   width: 20rem;
-  margin-right: 10rem;
+  margin-right: 2rem;
 }
 
 .mifirma {
@@ -941,7 +1020,7 @@ footer {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(243, 211, 169, 0.614)), to(rgba(214, 196, 172, 0.514))), url(../assets/img/portada-nosotros1.jpg);
   background-image: linear-gradient(rgba(243, 211, 169, 0.614), rgba(214, 196, 172, 0.514)), url(../assets/img/portada-nosotros1.jpg);
   background-size: cover;
-  padding: 0rem 5rem;
+  padding: 0rem 2rem;
 }
 
 .big-text {
@@ -1005,12 +1084,22 @@ footer {
   font-weight: 400;
 }
 
+.texto-secundario {
+  font-size: 2.5rem;
+}
+
 .boton-home:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1500px) {
+  .numeroDeItems {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 950px) {
   header {
     display: block;
   }
@@ -1038,12 +1127,12 @@ footer {
   .checkbtn {
     display: block;
     position: absolute;
-    top: 5%;
+    top: 1rem;
     right: 3%;
     color: black;
     float: right;
     line-height: 80px;
-    margin: 2.5rem;
+    margin: .5rem;
     cursor: pointer;
     z-index: 2;
   }
@@ -1056,11 +1145,17 @@ footer {
   #check {
     display: none;
   }
+}
+
+@media only screen and (max-width: 850px) {
   .intro {
     z-index: 7;
   }
   .intro-text {
     margin: 3rem;
+  }
+  .nav-links {
+    font-size: 2.2rem;
   }
   .landing {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(243, 211, 169, 0.714)), to(rgba(214, 196, 172, 0.714))), url(../assets/img/portada-nosotros1.jpg);
@@ -1131,6 +1226,9 @@ footer {
     z-index: 4;
     width: 100%;
   }
+  .carrito-contenedor {
+    margin: 0;
+  }
   .imagen-integrante {
     margin-right: 0;
   }
@@ -1146,6 +1244,11 @@ footer {
   }
   .mifirma {
     display: none;
+  }
+  .logo-footer {
+    margin: 0;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
   }
 }
 /*# sourceMappingURL=estilos.css.map */
