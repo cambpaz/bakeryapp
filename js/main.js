@@ -1,7 +1,7 @@
 // CUANDO SE CARGUE EL DOCUMENTO
 $(document).ready(
 	//CARGAR DATOS DE MANERA LOCAL
-	$.get("data/productos.json", function (productos, estado) {
+	$.get("../data/productos.json", function (productos, estado) {
 		var bebidas = []
 		var comidas = []
 		if (estado == "success") {

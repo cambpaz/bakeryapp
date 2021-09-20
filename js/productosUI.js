@@ -2,7 +2,7 @@
 function bebidasUI(bebidas) {
     for (bebida of bebidas) {
         $('#container-bebidas').append(`<div data-aos="flip-left" class="card card-paso1">
-		<img src="assets/img/${bebida.id}.jpg" class="card-img-top" alt="...">
+		<img src="../assets/img/${bebida.id}.jpg" class="card-img-top" alt="...">
 		<div class="card-body">
 		<h5 class="card-title">${bebida.nombre}</h5>
 		<p class="precioBebida">$${bebida.precio}</p>
@@ -18,7 +18,7 @@ function modalBebidaUI(bebidas) {
         $('#container-modal').append(`<div class="modal fade" id="${bebida.modalId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content modal-lg">
-						<div style="background-image: linear-gradient(rgba(241, 234, 224, 0.614),rgba(241, 234, 224, 0.614)), url(assets/img/${bebida.id}.jpg);" class="modal-header">
+						<div style="background-image: linear-gradient(rgba(241, 234, 224, 0.614),rgba(241, 234, 224, 0.614)), url(../assets/img/${bebida.id}.jpg);" class="modal-header">
 							<div style="display:flex; justify-content: center; align-items: center;">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
@@ -50,7 +50,7 @@ function modalBebidaUI(bebidas) {
 function comidasUI (comidas) {
 	for (const comida of comidas) {
 		$('#container-comidas').append(`<div data-aos="flip-left" class="card card-paso1">
-		<img src="assets/img/${comida.id}.jpg" class="card-img-top" alt="...">
+		<img src="../assets/img/${comida.id}.jpg" class="card-img-top" alt="...">
 		<div class="card-body">
 			<h5 class="card-title">${comida.nombre}</h5>
 			<p class="precioBebida">$${comida.precio}</p>
@@ -65,7 +65,7 @@ function modalComidasUI (comidas){
 		$('#container-modal-comidas').append(`<div class="modal fade" id="${comida.modalId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content modal-lg">
-					<div style="background-image: linear-gradient(rgba(241, 234, 224, 0.614),rgba(241, 234, 224, 0.614)), url(assets/img/${comida.id}.jpg);" class="modal-header">
+					<div style="background-image: linear-gradient(rgba(241, 234, 224, 0.614),rgba(241, 234, 224, 0.614)), url(../assets/img/${comida.id}.jpg);" class="modal-header">
 						<h5 class="modal-title" id="exampleModalLabel">${comida.nombre}</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>

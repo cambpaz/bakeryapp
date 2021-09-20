@@ -665,10 +665,13 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.modalHeader h4 {
-  margin: 2rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 #overlay {
@@ -1235,6 +1238,12 @@ footer {
   }
   .imagen-integrante::after {
     margin-right: 0;
+  }
+  .container-foto-contacto {
+    background-position: center;
+  }
+  .portada-contacto h2 {
+    font-size: 4.5rem;
   }
   footer {
     -webkit-box-orient: vertical;

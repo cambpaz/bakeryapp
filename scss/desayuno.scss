@@ -413,10 +413,10 @@ html {
 .modalHeader {
     display: flex;
     justify-content: space-between;
+    flex-direction: column-reverse;
+    align-items: flex-end;
 }
-.modalHeader h4 {
-    margin: 2rem;
-}
+
 #overlay {
     display: none;
     position: fixed;

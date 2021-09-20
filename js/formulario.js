@@ -33,6 +33,8 @@ $("#formConfirmar").on("submit", function (e) {
         $(".cart-content").empty();
         $(".cart-total").text(0);
         $(".numeroDeItems").text(0);
+        $(".display-carritoVacio").show();
+		$(".contenedor-total-carrito").hide();
         carrito = [];
         localStorage.setItem("Carrito", JSON.stringify(carrito))
     } else {

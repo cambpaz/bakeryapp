@@ -63,6 +63,7 @@ function comprarBebida(e) {
 				item.cantidad += cantidadAgregadaBebida;
 				$(".mensaje-agregado").fadeIn(1000).delay(1000).fadeOut(2000)
 				$(".display-carritoVacio").hide()
+				$(".contenedor-total-carrito").show()
 			}
 		}
 		//si el carrito no esta en el carrito, lo agrega
@@ -71,6 +72,7 @@ function comprarBebida(e) {
 			itemCarro.cantidad += cantidadAgregadaBebida;
 			$(".mensaje-agregado").fadeIn(1000).delay(1000).fadeOut(2000)
 			$(".display-carritoVacio").hide()
+			$(".contenedor-total-carrito").show()
 		}
 		mostrarItemsCarrito();
 		//lo guardo en el local storage
@@ -122,12 +124,11 @@ function display(carrito){
 if (carrito.length === 0) {
 		$(".contenedor-total-carrito").hide();
 		$(".clear-cart").hide()
-		console.log("entro al if del display");
 	}
 	else if (carrito.length !== 0) {
 		$(".display-carritoVacio").hide();
+		$(".contenedor-total-carrito").show();
 		$(".clear-cart").show()
-		console.log("entro al else");
 	}
 }
 
@@ -193,7 +194,7 @@ function mostrarItemsCarrito() {
 	for (let itemCarro of carrito) {
 		const DIV = document.createElement('div');
 		$(DIV).addClass("cart-item");
-		DIV.innerHTML = `<img src="assets/img/${itemCarro.id}.jpg" alt="product">
+		DIV.innerHTML = `<img src="../assets/img/${itemCarro.id}.jpg" alt="product">
 			<div>
 				<h4 class="nombre-producto">${itemCarro.nombre}</h4>
 				<h5 class="precio-producto">$${itemCarro.precio}</h5>
@@ -235,7 +236,10 @@ function eliminarUnidad(e) {
 	mostrarItemsCarrito()
 	localStorage.setItem("Carrito", JSON.stringify(carrito));
 	$(".contenedor-total-carrito").hide()
-	$(".display-carritoVacio").show();
+	if (carrito.length === 0) {
+		$(".clear-cart").hide()
+		$(".display-carritoVacio").show();
+	}
 }
 
 //BOTONES PARA ABRIR Y CERRAR EL CARRITO
