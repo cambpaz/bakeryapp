@@ -197,7 +197,7 @@ function mostrarItemsCarrito() {
 		DIV.innerHTML = `<img src="../assets/img/${itemCarro.id}.jpg" alt="product">
 			<div>
 				<h4 class="nombre-producto">${itemCarro.nombre}</h4>
-				<h5 class="precio-producto">$${itemCarro.precio}</h5>
+				<h5 class="precio-producto">$${itemCarro.precio * itemCarro.cantidad}</h5>
 				<span class="remove-items" id="${itemCarro.id}">ELIMINAR</span>
 			</div>
 			<div>
