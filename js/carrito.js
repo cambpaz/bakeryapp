@@ -221,11 +221,11 @@ function eliminarUnidad(e) {
 	valoresDelCarrito(carrito)
 	mostrarItemsCarrito()
 	localStorage.setItem("Carrito", JSON.stringify(carrito));
-	$(".contenedor-total-carrito").hide()
 	if (carrito.length === 0) {
 		$(".clear-cart").hide()
 		$(".display-carritoVacio").show();
-	}
+		$(".contenedor-total-carrito").hide()
+	} else {$(".contenedor-total-carrito").show()}
 }
 
 //BOTONES PARA ABRIR Y CERRAR EL CARRITO
