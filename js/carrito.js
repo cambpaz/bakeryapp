@@ -46,6 +46,7 @@ let contenidoCarrito = document.querySelector(".cart-content");
 let carritoOverlay = document.querySelector(".cart-overlay");
 let carritoDOM = document.querySelector(".cart");
 
+$(".mensaje-agregado").hide()
 function comprarBebida(e) {
 	e.preventDefault();
 	let id = e.target.id;
@@ -82,57 +83,11 @@ function comprarBebida(e) {
 		//mostrar los items en el carrito
 		$(".cantidadDOMBebida").text(0)
 		$(".cantidadDOMComida").text(0)
-
 		cantidadAgregadaBebida = 0;
 		cantidadAgregadaComida = 0;
 	}
 }
 
-//FUNCION PARA AGREGAR MAS DE UNO DESDE EL MODAL
-let cantidadAgregadaComida = 0;
-
-function agregarUnoComida() {
-	cantidadAgregadaComida += 1;
-	$(".cantidadDOMComida").text(cantidadAgregadaComida);
-}
-
-function eliminarUnoComida() {
-	if (cantidadAgregadaComida > 0) {
-		--cantidadAgregadaComida
-		$(".cantidadDOMComida").text(cantidadAgregadaComida);
-	} else {
-		$(".cantidadDOMComida").text(0);
-	}
-}
-
-let cantidadAgregadaBebida = 0;
-
-function agregarUnoBebida() {
-	cantidadAgregadaBebida += 1;
-	$(".cantidadDOMBebida").text(cantidadAgregadaBebida);
-}
-
-function eliminarUnoBebida() {
-	if (cantidadAgregadaBebida > 0) {
-		--cantidadAgregadaBebida
-	$(".cantidadDOMBebida").text(cantidadAgregadaBebida);
-	} else {
-		$(".cantidadDOMBebida").text(0);
-	}
-}
-function display(carrito){
-if (carrito.length === 0) {
-		$(".contenedor-total-carrito").hide();
-		$(".clear-cart").hide()
-	}
-	else if (carrito.length !== 0) {
-		$(".display-carritoVacio").hide();
-		$(".contenedor-total-carrito").show();
-		$(".clear-cart").show()
-	}
-}
-
-$(".mensaje-agregado").hide()
 function comprarComida(e) {
 	e.preventDefault();
 	let id = e.target.id;
@@ -171,7 +126,38 @@ function comprarComida(e) {
 		//mostrar los items en el carrito
 		$(".cantidadDOMComida").text(0)
 		cantidadAgregadaComida = 0;
-		console.log(carrito.length);
+	}
+}
+//FUNCION PARA AGREGAR MAS DE UNO DESDE EL MODAL
+let cantidadAgregadaComida = 0;
+
+function agregarUnoComida() {
+	cantidadAgregadaComida += 1;
+	$(".cantidadDOMComida").text(cantidadAgregadaComida);
+}
+
+function eliminarUnoComida() {
+	if (cantidadAgregadaComida > 0) {
+		--cantidadAgregadaComida
+		$(".cantidadDOMComida").text(cantidadAgregadaComida);
+	} else {
+		$(".cantidadDOMComida").text(0);
+	}
+}
+
+let cantidadAgregadaBebida = 0;
+
+function agregarUnoBebida() {
+	cantidadAgregadaBebida += 1;
+	$(".cantidadDOMBebida").text(cantidadAgregadaBebida);
+}
+
+function eliminarUnoBebida() {
+	if (cantidadAgregadaBebida > 0) {
+		--cantidadAgregadaBebida
+	$(".cantidadDOMBebida").text(cantidadAgregadaBebida);
+	} else {
+		$(".cantidadDOMBebida").text(0);
 	}
 }
 
@@ -264,8 +250,6 @@ function agregarUnidadDesdeCarrito(e) {
 	let productoSeleccionado = carrito.filter(prod => prod.id == e.target.id);
 	for (producto of productoSeleccionado) {
 		producto.cantidad += 1;
-		console.log(producto.cantidad);
-		console.log(producto);
 	}
 	mostrarItemsCarrito(carrito);
 	valoresDelCarrito(carrito);
@@ -278,17 +262,26 @@ function agregarUnidadDesdeCarrito(e) {
 function eliminarUnidadDesdeCarrito(e) {
 	e.preventDefault();
 	let productoCarrito = carrito.filter(prod => prod.id == e.target.id);
-	console.log(productoCarrito);
 	for (producto of productoCarrito) {
 		if (producto.cantidad > 1) {
 			producto.cantidad--
-		console.log(producto.cantidad);
-		console.log(producto);
 		}
 	}
 	mostrarItemsCarrito(carrito);
 	valoresDelCarrito(carrito);
 }
 
+//FUNCION PARA MENSAJES Y CARRITO VACIO
+function display(carrito){
+	if (carrito.length === 0) {
+			$(".contenedor-total-carrito").hide();
+			$(".clear-cart").hide()
+		}
+		else if (carrito.length !== 0) {
+			$(".display-carritoVacio").hide();
+			$(".contenedor-total-carrito").show();
+			$(".clear-cart").show()
+		}
+	}
 
 

@@ -2,8 +2,8 @@
 $(document).ready(
 	//CARGAR DATOS DE MANERA LOCAL
 	$.get("../data/productos.json", function (productos, estado) {
-		var bebidas = []
-		var comidas = []
+		let bebidas = []
+		let comidas = []
 		if (estado == "success") {
 			for (producto of productos) {
 				if (producto.tipo == "Bebida") {
